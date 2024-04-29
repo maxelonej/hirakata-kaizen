@@ -59,5 +59,25 @@ namespace HiraKata_Kaizen.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checkedCheckbox {
+            get {
+                object obj = ResourceManager.GetObject("checkedCheckbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uncheckedCheckbox {
+            get {
+                object obj = ResourceManager.GetObject("uncheckedCheckbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
