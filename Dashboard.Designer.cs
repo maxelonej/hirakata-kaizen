@@ -28,396 +28,353 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.explorePanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.learnPanel = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.statisticsPanel = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.achievementsPanel = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.settingsPanel = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.aboutPanel = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHamburgerMenu = new System.Windows.Forms.Button();
-            this.sidebarTransitionTimer = new System.Windows.Forms.Timer(this.components);
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.header = new System.Windows.Forms.Panel();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnMinimize = new System.Windows.Forms.PictureBox();
             this.btnMaximize = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.btnMinimize = new System.Windows.Forms.PictureBox();
-            this.sidebar.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.explorePanel.SuspendLayout();
-            this.learnPanel.SuspendLayout();
-            this.statisticsPanel.SuspendLayout();
-            this.achievementsPanel.SuspendLayout();
-            this.settingsPanel.SuspendLayout();
-            this.aboutPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.sidebar = new System.Windows.Forms.Panel();
+            this.content = new System.Windows.Forms.Panel();
+            this.btnAbout = new HiraKata_Kaizen.CustomButton();
+            this.btnSettings = new HiraKata_Kaizen.CustomButton();
+            this.btnAchievements = new HiraKata_Kaizen.CustomButton();
+            this.btnStatistics = new HiraKata_Kaizen.CustomButton();
+            this.btnLearn = new HiraKata_Kaizen.CustomButton();
+            this.btnExplore = new HiraKata_Kaizen.CustomButton();
+            this.btnHome = new HiraKata_Kaizen.CustomButton();
+            this.header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
+            this.sidebar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // sidebar
+            // header
             // 
-            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.sidebar.Controls.Add(this.panel9);
-            this.sidebar.Controls.Add(this.explorePanel);
-            this.sidebar.Controls.Add(this.learnPanel);
-            this.sidebar.Controls.Add(this.statisticsPanel);
-            this.sidebar.Controls.Add(this.achievementsPanel);
-            this.sidebar.Controls.Add(this.settingsPanel);
-            this.sidebar.Controls.Add(this.aboutPanel);
-            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebar.Location = new System.Drawing.Point(0, 44);
-            this.sidebar.Name = "sidebar";
-            this.sidebar.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.sidebar.Size = new System.Drawing.Size(272, 448);
-            this.sidebar.TabIndex = 7;
+            this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
+            this.header.Controls.Add(this.logo);
+            this.header.Controls.Add(this.lblTitle);
+            this.header.Controls.Add(this.btnMinimize);
+            this.header.Controls.Add(this.btnMaximize);
+            this.header.Controls.Add(this.btnClose);
+            this.header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(1079, 44);
+            this.header.TabIndex = 1;
+            this.header.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.header_MouseDoubleClick);
+            this.header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.header_MouseDown);
+            this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_MouseMove);
+            this.header.MouseUp += new System.Windows.Forms.MouseEventHandler(this.header_MouseUp);
             // 
-            // panel9
+            // logo
             // 
-            this.panel9.Controls.Add(this.button1);
-            this.panel9.Location = new System.Drawing.Point(3, 23);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(197, 41);
-            this.panel9.TabIndex = 3;
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.Location = new System.Drawing.Point(11, 5);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(36, 35);
+            this.logo.TabIndex = 10;
+            this.logo.TabStop = false;
             // 
-            // button1
+            // lblTitle
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-17, -4);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(252, 51);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "     Главная";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // explorePanel
-            // 
-            this.explorePanel.Controls.Add(this.button2);
-            this.explorePanel.Location = new System.Drawing.Point(3, 73);
-            this.explorePanel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.explorePanel.Name = "explorePanel";
-            this.explorePanel.Size = new System.Drawing.Size(197, 41);
-            this.explorePanel.TabIndex = 3;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.Snow;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(-17, -10);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(234, 61);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "     Исследовать";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // learnPanel
-            // 
-            this.learnPanel.Controls.Add(this.button3);
-            this.learnPanel.Location = new System.Drawing.Point(3, 123);
-            this.learnPanel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.learnPanel.Name = "learnPanel";
-            this.learnPanel.Size = new System.Drawing.Size(197, 41);
-            this.learnPanel.TabIndex = 4;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button3.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.Snow;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(-17, -9);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(234, 61);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "     Изучить";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // statisticsPanel
-            // 
-            this.statisticsPanel.Controls.Add(this.button5);
-            this.statisticsPanel.Location = new System.Drawing.Point(3, 173);
-            this.statisticsPanel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.statisticsPanel.Name = "statisticsPanel";
-            this.statisticsPanel.Size = new System.Drawing.Size(197, 41);
-            this.statisticsPanel.TabIndex = 5;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button5.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.ForeColor = System.Drawing.Color.Snow;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(-17, -9);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(234, 61);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "     Статистика";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // achievementsPanel
-            // 
-            this.achievementsPanel.Controls.Add(this.button6);
-            this.achievementsPanel.Location = new System.Drawing.Point(3, 223);
-            this.achievementsPanel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.achievementsPanel.Name = "achievementsPanel";
-            this.achievementsPanel.Size = new System.Drawing.Size(197, 41);
-            this.achievementsPanel.TabIndex = 3;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.ForeColor = System.Drawing.Color.Snow;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(-17, -9);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(234, 61);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "     Достижения";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // settingsPanel
-            // 
-            this.settingsPanel.Controls.Add(this.button7);
-            this.settingsPanel.Location = new System.Drawing.Point(3, 273);
-            this.settingsPanel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.settingsPanel.Name = "settingsPanel";
-            this.settingsPanel.Size = new System.Drawing.Size(197, 41);
-            this.settingsPanel.TabIndex = 3;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button7.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.ForeColor = System.Drawing.Color.Snow;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(-17, -7);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(234, 61);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "     Настройки";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // aboutPanel
-            // 
-            this.aboutPanel.Controls.Add(this.button4);
-            this.aboutPanel.Location = new System.Drawing.Point(3, 323);
-            this.aboutPanel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
-            this.aboutPanel.Name = "aboutPanel";
-            this.aboutPanel.Size = new System.Drawing.Size(197, 41);
-            this.aboutPanel.TabIndex = 3;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.button4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.Color.Snow;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-17, -7);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(234, 61);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "     О проекте";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnHamburgerMenu);
-            this.panel2.Location = new System.Drawing.Point(377, 173);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(197, 41);
-            this.panel2.TabIndex = 2;
-            // 
-            // btnHamburgerMenu
-            // 
-            this.btnHamburgerMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnHamburgerMenu.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnHamburgerMenu.ForeColor = System.Drawing.Color.Snow;
-            this.btnHamburgerMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnHamburgerMenu.Image")));
-            this.btnHamburgerMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHamburgerMenu.Location = new System.Drawing.Point(-13, -2);
-            this.btnHamburgerMenu.Name = "btnHamburgerMenu";
-            this.btnHamburgerMenu.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnHamburgerMenu.Size = new System.Drawing.Size(252, 51);
-            this.btnHamburgerMenu.TabIndex = 4;
-            this.btnHamburgerMenu.Text = "     ";
-            this.btnHamburgerMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHamburgerMenu.UseVisualStyleBackColor = false;
-            this.btnHamburgerMenu.Click += new System.EventHandler(this.btnHamburgerMenu_Click);
-            // 
-            // sidebarTransitionTimer
-            // 
-            this.sidebarTransitionTimer.Interval = 10;
-            this.sidebarTransitionTimer.Tick += new System.EventHandler(this.sidebarTransitionTimer_Tick);
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.panel10.Controls.Add(this.pictureBox1);
-            this.panel10.Controls.Add(this.label1);
-            this.panel10.Controls.Add(this.btnMaximize);
-            this.panel10.Controls.Add(this.btnClose);
-            this.panel10.Controls.Add(this.btnMinimize);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(705, 44);
-            this.panel10.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 35);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 14.25F);
-            this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(51, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 23);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "HiraKata Kaizen";
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(629, 12);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(24, 22);
-            this.btnMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnMaximize.TabIndex = 8;
-            this.btnMaximize.TabStop = false;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(669, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(24, 22);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnClose.TabIndex = 8;
-            this.btnClose.TabStop = false;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
+            this.lblTitle.Font = new System.Drawing.Font("Verdana", 14.25F);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(51, 11);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(159, 23);
+            this.lblTitle.TabIndex = 9;
+            this.lblTitle.Text = "HiraKata Kaizen";
             // 
             // btnMinimize
             // 
             this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(589, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(946, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(24, 22);
+            this.btnMinimize.Size = new System.Drawing.Size(43, 44);
+            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnMinimize.TabIndex = 8;
             this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
+            this.btnMaximize.Location = new System.Drawing.Point(989, 0);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(45, 44);
+            this.btnMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnMaximize.TabIndex = 8;
+            this.btnMaximize.TabStop = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1034, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(45, 44);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnClose.TabIndex = 8;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // sidebar
+            // 
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.sidebar.Controls.Add(this.btnAbout);
+            this.sidebar.Controls.Add(this.btnSettings);
+            this.sidebar.Controls.Add(this.btnAchievements);
+            this.sidebar.Controls.Add(this.btnStatistics);
+            this.sidebar.Controls.Add(this.btnLearn);
+            this.sidebar.Controls.Add(this.btnExplore);
+            this.sidebar.Controls.Add(this.btnHome);
+            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidebar.Location = new System.Drawing.Point(0, 44);
+            this.sidebar.Name = "sidebar";
+            this.sidebar.Size = new System.Drawing.Size(235, 469);
+            this.sidebar.TabIndex = 10;
+            // 
+            // content
+            // 
+            this.content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.content.Location = new System.Drawing.Point(235, 44);
+            this.content.Name = "content";
+            this.content.Size = new System.Drawing.Size(844, 469);
+            this.content.TabIndex = 12;
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnAbout.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnAbout.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAbout.BorderRadius = 10;
+            this.btnAbout.BorderSize = 0;
+            this.btnAbout.FlatAppearance.BorderSize = 0;
+            this.btnAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnAbout.ForeColor = System.Drawing.Color.White;
+            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
+            this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbout.Location = new System.Drawing.Point(11, 299);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnAbout.Size = new System.Drawing.Size(208, 40);
+            this.btnAbout.TabIndex = 17;
+            this.btnAbout.Text = "   О проекте";
+            this.btnAbout.TextColor = System.Drawing.Color.White;
+            this.btnAbout.UseVisualStyleBackColor = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnSettings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnSettings.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSettings.BorderRadius = 10;
+            this.btnSettings.BorderSize = 0;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Location = new System.Drawing.Point(11, 253);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 15, 0);
+            this.btnSettings.Size = new System.Drawing.Size(208, 40);
+            this.btnSettings.TabIndex = 17;
+            this.btnSettings.Text = "   Настройки";
+            this.btnSettings.TextColor = System.Drawing.Color.White;
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnAchievements
+            // 
+            this.btnAchievements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnAchievements.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnAchievements.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAchievements.BorderRadius = 10;
+            this.btnAchievements.BorderSize = 0;
+            this.btnAchievements.FlatAppearance.BorderSize = 0;
+            this.btnAchievements.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnAchievements.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnAchievements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAchievements.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnAchievements.ForeColor = System.Drawing.Color.White;
+            this.btnAchievements.Image = ((System.Drawing.Image)(resources.GetObject("btnAchievements.Image")));
+            this.btnAchievements.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAchievements.Location = new System.Drawing.Point(13, 207);
+            this.btnAchievements.Name = "btnAchievements";
+            this.btnAchievements.Padding = new System.Windows.Forms.Padding(10, 0, 7, 0);
+            this.btnAchievements.Size = new System.Drawing.Size(206, 40);
+            this.btnAchievements.TabIndex = 17;
+            this.btnAchievements.Text = "   Достижения";
+            this.btnAchievements.TextColor = System.Drawing.Color.White;
+            this.btnAchievements.UseVisualStyleBackColor = false;
+            this.btnAchievements.Click += new System.EventHandler(this.btnAchievements_Click);
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnStatistics.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnStatistics.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnStatistics.BorderRadius = 10;
+            this.btnStatistics.BorderSize = 0;
+            this.btnStatistics.FlatAppearance.BorderSize = 0;
+            this.btnStatistics.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnStatistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistics.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnStatistics.ForeColor = System.Drawing.Color.White;
+            this.btnStatistics.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistics.Image")));
+            this.btnStatistics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStatistics.Location = new System.Drawing.Point(13, 161);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Padding = new System.Windows.Forms.Padding(10, 0, 13, 0);
+            this.btnStatistics.Size = new System.Drawing.Size(206, 40);
+            this.btnStatistics.TabIndex = 17;
+            this.btnStatistics.Text = "   Статистика";
+            this.btnStatistics.TextColor = System.Drawing.Color.White;
+            this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            // 
+            // btnLearn
+            // 
+            this.btnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnLearn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnLearn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLearn.BorderRadius = 10;
+            this.btnLearn.BorderSize = 0;
+            this.btnLearn.FlatAppearance.BorderSize = 0;
+            this.btnLearn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnLearn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnLearn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLearn.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnLearn.ForeColor = System.Drawing.Color.White;
+            this.btnLearn.Image = ((System.Drawing.Image)(resources.GetObject("btnLearn.Image")));
+            this.btnLearn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLearn.Location = new System.Drawing.Point(13, 115);
+            this.btnLearn.Name = "btnLearn";
+            this.btnLearn.Padding = new System.Windows.Forms.Padding(10, 0, 42, 0);
+            this.btnLearn.Size = new System.Drawing.Size(206, 40);
+            this.btnLearn.TabIndex = 17;
+            this.btnLearn.Text = "   Изучить";
+            this.btnLearn.TextColor = System.Drawing.Color.White;
+            this.btnLearn.UseVisualStyleBackColor = false;
+            this.btnLearn.Click += new System.EventHandler(this.btnLearn_Click);
+            // 
+            // btnExplore
+            // 
+            this.btnExplore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnExplore.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnExplore.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnExplore.BorderRadius = 10;
+            this.btnExplore.BorderSize = 0;
+            this.btnExplore.FlatAppearance.BorderSize = 0;
+            this.btnExplore.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnExplore.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnExplore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExplore.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnExplore.ForeColor = System.Drawing.Color.White;
+            this.btnExplore.Image = ((System.Drawing.Image)(resources.GetObject("btnExplore.Image")));
+            this.btnExplore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExplore.Location = new System.Drawing.Point(13, 69);
+            this.btnExplore.Name = "btnExplore";
+            this.btnExplore.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnExplore.Size = new System.Drawing.Size(206, 40);
+            this.btnExplore.TabIndex = 16;
+            this.btnExplore.Text = "   Исследовать";
+            this.btnExplore.TextColor = System.Drawing.Color.White;
+            this.btnExplore.UseVisualStyleBackColor = false;
+            this.btnExplore.Click += new System.EventHandler(this.btnExplore_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnHome.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnHome.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnHome.BorderRadius = 10;
+            this.btnHome.BorderSize = 0;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(13, 23);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 43, 0);
+            this.btnHome.Size = new System.Drawing.Size(206, 40);
+            this.btnHome.TabIndex = 15;
+            this.btnHome.Text = "   Главная";
+            this.btnHome.TextColor = System.Drawing.Color.White;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 492);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
+            this.ClientSize = new System.Drawing.Size(1079, 513);
+            this.Controls.Add(this.content);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.header);
+            this.ForeColor = System.Drawing.Color.Snow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HiraKata Kaizen";
             this.Load += new System.EventHandler(this.Dashboard_Load);
-            this.sidebar.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.explorePanel.ResumeLayout(false);
-            this.learnPanel.ResumeLayout(false);
-            this.statisticsPanel.ResumeLayout(false);
-            this.achievementsPanel.ResumeLayout(false);
-            this.settingsPanel.ResumeLayout(false);
-            this.aboutPanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.header.ResumeLayout(false);
+            this.header.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
+            this.sidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel sidebar;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel explorePanel;
-        private System.Windows.Forms.Panel learnPanel;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel statisticsPanel;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel achievementsPanel;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel settingsPanel;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Panel aboutPanel;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Timer sidebarTransitionTimer;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button btnHamburgerMenu;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel header;
+        private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.PictureBox btnMinimize;
         private System.Windows.Forms.PictureBox btnMaximize;
-        private System.Windows.Forms.PictureBox btnClose;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Panel content;
+        public System.Windows.Forms.Panel sidebar;
+        public CustomButton btnHome;
+        public CustomButton btnExplore;
+        public CustomButton btnLearn;
+        public CustomButton btnStatistics;
+        public CustomButton btnAchievements;
+        public CustomButton btnSettings;
+        public CustomButton btnAbout;
     }
 }
 
