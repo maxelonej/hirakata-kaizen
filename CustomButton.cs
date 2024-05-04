@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.ComponentModel;
 
 namespace HiraKata_Kaizen {
     public class CustomButton : Button {
@@ -50,7 +49,7 @@ namespace HiraKata_Kaizen {
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Size = new Size(150, 40);
-            this.BackColor = Color.FromArgb(24, 24, 27);
+            this.BackColor = Color.FromArgb(30, 30, 34);
             this.ForeColor = Color.White;
             this.Resize += new EventHandler(Button_Resize);
         }

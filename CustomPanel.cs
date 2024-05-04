@@ -7,7 +7,7 @@ namespace HiraKata_Kaizen {
         byte borderRadius = 30;
 
         public CustomPanel() {
-            BackColor = Color.FromArgb(24, 24, 27);
+            BackColor = Color.FromArgb(30, 30, 34);
             ForeColor = Color.Snow;
             Size = new Size(400, 200);
         }
