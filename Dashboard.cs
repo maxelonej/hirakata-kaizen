@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace HiraKata_Kaizen {
@@ -8,13 +7,16 @@ namespace HiraKata_Kaizen {
         Point dragCursorPoint, dragFormPoint; // drag header
         bool mousedown; 
         Point initialLocation; Size initialSize; // back form from maximize
-        Form currentForm; // Add a variable to store the current form
+        public Form currentForm; // Add a variable to store the current form
 
         public Dashboard() {
             InitializeComponent();
 
             initialLocation = Location;
             initialSize = Size;
+
+            btnMinimize.FlatAppearance.MouseOverBackColor = Color.FromArgb(60, Color.White);
+            btnClose.FlatAppearance.MouseOverBackColor = Color.Red;
         }
 
         public void loadForm(object Form) {
@@ -38,22 +40,7 @@ namespace HiraKata_Kaizen {
             currentForm = f;
         }
 
-        bool sidebarExpand;
-        void GetSettings() {
-            sidebarExpand = Properties.Settings.Default.sidebarExpand;
-            if (sidebarExpand) {
-                sidebar.Width = 235;
-            }
-            else if (!sidebarExpand) {
-                sidebar.Width = 64;
-                foreach (Button btn in sidebar.Controls.OfType<Button>()) {
-                    btn.Text = "";
-                    btn.Size = new Size(42, 40);
-                    btn.ImageAlign = ContentAlignment.MiddleCenter;
-                    btn.Padding = Padding.Empty;
-                }
-            }
-        }
+        void GetSettings() { }
 
         void Dashboard_Load(object sender, EventArgs e) {
             GetSettings(); // Load settings 
@@ -64,14 +51,14 @@ namespace HiraKata_Kaizen {
         void btnMinimize_Click(object sender, EventArgs e) {
             WindowState = FormWindowState.Minimized;
         }
-        void btnMaximize_Click(object sender, EventArgs e) {
-            if (WindowState == FormWindowState.Maximized) {
-                WindowState = FormWindowState.Normal;
-                StartPosition = FormStartPosition.CenterScreen;
-            } else {
-                WindowState = FormWindowState.Maximized;
-            }
-        }
+        //void btnMaximize_Click(object sender, EventArgs e) {
+        //    if (WindowState == FormWindowState.Maximized) {
+        //        WindowState = FormWindowState.Normal;
+        //        StartPosition = FormStartPosition.CenterScreen;
+        //    } else {
+        //        WindowState = FormWindowState.Maximized;
+        //    }
+        //}
         void btnClose_Click(object sender, EventArgs e) {
             Application.Exit();
         }
@@ -106,11 +93,11 @@ namespace HiraKata_Kaizen {
         Button previousButton = null;
         void ChangeButtonColor(Button currentButton) {
             if (previousButton != null) {
-                previousButton.BackColor = Color.FromArgb(24, 24, 27);
+                previousButton.BackColor = Color.FromArgb(30, 30, 34);
             }
 
             if (currentButton != null) {
-                currentButton.BackColor = Color.FromArgb(14, 14, 16);
+                currentButton.BackColor = Color.FromArgb(0, 0, 0);
                 previousButton = currentButton;
             }
         }
