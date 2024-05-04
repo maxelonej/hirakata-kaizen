@@ -118,15 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkboxExpandSidebar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAKtJREFUSEvtlU0KwjAUhLPoAerfdeuh1OMIxZW3SL/RkVgUSmyDUPLBLN7QNwNd
-        5IW/EGNs0SZTrde/wwcN6tAd9eiaKe1oVxmNYxOYR3RCW1vZaBedUWcrgan2n8NfkLFTlscnCkY3j7NR
-        loo8Pow96j3ORlno4LEWfFILJqkFk6yzoOxjJzCWeq71N8bPtcDUJdKxGDdnoF10UZatBGbZk/kOHyx/
-        9MsQwgA3mfHUyhcTBAAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="checkBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
