@@ -33,13 +33,13 @@
             // customPanel1
             // 
             this.customPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
             this.customPanel1.BorderRadius = ((byte)(30));
             this.customPanel1.Controls.Add(this.label3);
             this.customPanel1.Controls.Add(this.label1);
             this.customPanel1.Controls.Add(this.label2);
             this.customPanel1.ForeColor = System.Drawing.Color.Snow;
-            this.customPanel1.Location = new System.Drawing.Point(66, 135);
+            this.customPanel1.Location = new System.Drawing.Point(248, 169);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(518, 130);
             this.customPanel1.TabIndex = 0;
@@ -82,7 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(650, 400);
+            this.ClientSize = new System.Drawing.Size(1015, 469);
             this.Controls.Add(this.customPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ForeColor = System.Drawing.Color.White;
