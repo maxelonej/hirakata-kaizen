@@ -25,13 +25,13 @@ namespace HiraKata_Kaizen.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool sidebarExpand {
+        [global::System.Configuration.DefaultSettingValueAttribute("\"\"")]
+        public string lastOpenedFilter {
             get {
-                return ((bool)(this["sidebarExpand"]));
+                return ((string)(this["lastOpenedFilter"]));
             }
             set {
-                this["sidebarExpand"] = value;
+                this["lastOpenedFilter"] = value;
             }
         }
     }
