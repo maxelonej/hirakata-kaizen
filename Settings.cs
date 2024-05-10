@@ -19,13 +19,13 @@ namespace HiraKata_Kaizen {
         }
 
         void checkbox_CheckedChanged(object sender, EventArgs e) {
-            CheckBox cb = sender as CheckBox;
-            if (cb.Checked) {
-                cb.Image = Properties.Resources.checkedCheckbox;
-            }
-            else {
-                cb.Image = Properties.Resources.uncheckedCheckbox;
-            }
+            //CheckBox cb = sender as CheckBox;
+            //if (cb.Checked) {
+            //    cb.Image = Properties.Resources.checkedCheckbox;
+            //}
+            //else {
+            //    cb.Image = Properties.Resources.uncheckedCheckbox;
+            //}
         }
     }
 }
