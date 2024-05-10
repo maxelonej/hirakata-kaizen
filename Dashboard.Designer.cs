@@ -30,19 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.header = new System.Windows.Forms.Panel();
+            this.btnMinimize = new HiraKata_Kaizen.CustomButton();
+            this.btnClose = new HiraKata_Kaizen.CustomButton();
             this.logo = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.sidebar = new System.Windows.Forms.Panel();
-            this.content = new System.Windows.Forms.Panel();
             this.btnAchievements = new HiraKata_Kaizen.CustomButton();
             this.btnSettings = new HiraKata_Kaizen.CustomButton();
+            this.btnCreate = new HiraKata_Kaizen.CustomButton();
             this.btnAbout = new HiraKata_Kaizen.CustomButton();
             this.btnStatistics = new HiraKata_Kaizen.CustomButton();
-            this.btnLearn = new HiraKata_Kaizen.CustomButton();
+            this.btnPractice = new HiraKata_Kaizen.CustomButton();
             this.btnExplore = new HiraKata_Kaizen.CustomButton();
             this.btnHome = new HiraKata_Kaizen.CustomButton();
-            this.btnMinimize = new HiraKata_Kaizen.CustomButton();
-            this.btnClose = new HiraKata_Kaizen.CustomButton();
+            this.content = new System.Windows.Forms.Panel();
             this.toolTip = new HiraKata_Kaizen.CustomToolTip();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -66,10 +67,52 @@
             this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_MouseMove);
             this.header.MouseUp += new System.Windows.Forms.MouseEventHandler(this.header_MouseUp);
             // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.Black;
+            this.btnMinimize.BackgroundColor = System.Drawing.Color.Black;
+            this.btnMinimize.BorderColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.BorderRadius = 0;
+            this.btnMinimize.BorderSize = 0;
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(993, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(43, 44);
+            this.btnMinimize.TabIndex = 11;
+            this.btnMinimize.TextColor = System.Drawing.Color.White;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Black;
+            this.btnClose.BackgroundColor = System.Drawing.Color.Black;
+            this.btnClose.BorderColor = System.Drawing.Color.Transparent;
+            this.btnClose.BorderRadius = 0;
+            this.btnClose.BorderSize = 0;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1036, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(43, 44);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.TextColor = System.Drawing.Color.White;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // logo
             // 
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(14, 4);
+            this.logo.Location = new System.Drawing.Point(17, 5);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(36, 35);
             this.logo.TabIndex = 10;
@@ -81,7 +124,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Black;
             this.lblTitle.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(61, 11);
+            this.lblTitle.Location = new System.Drawing.Point(64, 10);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(159, 23);
             this.lblTitle.TabIndex = 9;
@@ -92,9 +135,10 @@
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
             this.sidebar.Controls.Add(this.btnAchievements);
             this.sidebar.Controls.Add(this.btnSettings);
+            this.sidebar.Controls.Add(this.btnCreate);
             this.sidebar.Controls.Add(this.btnAbout);
             this.sidebar.Controls.Add(this.btnStatistics);
-            this.sidebar.Controls.Add(this.btnLearn);
+            this.sidebar.Controls.Add(this.btnPractice);
             this.sidebar.Controls.Add(this.btnExplore);
             this.sidebar.Controls.Add(this.btnHome);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
@@ -102,15 +146,6 @@
             this.sidebar.Name = "sidebar";
             this.sidebar.Size = new System.Drawing.Size(64, 469);
             this.sidebar.TabIndex = 10;
-            // 
-            // content
-            // 
-            this.content.BackColor = System.Drawing.Color.Black;
-            this.content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.content.Location = new System.Drawing.Point(64, 44);
-            this.content.Name = "content";
-            this.content.Size = new System.Drawing.Size(1015, 469);
-            this.content.TabIndex = 12;
             // 
             // btnAchievements
             // 
@@ -164,6 +199,30 @@
             this.btnSettings.Visible = false;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
+            // btnCreate
+            // 
+            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btnCreate.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btnCreate.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCreate.BorderRadius = 10;
+            this.btnCreate.BorderSize = 0;
+            this.btnCreate.FlatAppearance.BorderSize = 0;
+            this.btnCreate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.Image")));
+            this.btnCreate.Location = new System.Drawing.Point(11, 190);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(42, 40);
+            this.btnCreate.TabIndex = 17;
+            this.btnCreate.Text = "   Создать";
+            this.btnCreate.TextColor = System.Drawing.Color.White;
+            this.toolTip.SetToolTip(this.btnCreate, "Создать пак иероглифов");
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
             // btnAbout
             // 
             this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
@@ -178,7 +237,7 @@
             this.btnAbout.Font = new System.Drawing.Font("Verdana", 14F);
             this.btnAbout.ForeColor = System.Drawing.Color.White;
             this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.Location = new System.Drawing.Point(11, 190);
+            this.btnAbout.Location = new System.Drawing.Point(12, 236);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(42, 40);
             this.btnAbout.TabIndex = 17;
@@ -212,29 +271,29 @@
             this.btnStatistics.UseVisualStyleBackColor = false;
             this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
-            // btnLearn
+            // btnPractice
             // 
-            this.btnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.btnLearn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.btnLearn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLearn.BorderRadius = 10;
-            this.btnLearn.BorderSize = 0;
-            this.btnLearn.FlatAppearance.BorderSize = 0;
-            this.btnLearn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnLearn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnLearn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLearn.Font = new System.Drawing.Font("Verdana", 14F);
-            this.btnLearn.ForeColor = System.Drawing.Color.White;
-            this.btnLearn.Image = ((System.Drawing.Image)(resources.GetObject("btnLearn.Image")));
-            this.btnLearn.Location = new System.Drawing.Point(11, 98);
-            this.btnLearn.Name = "btnLearn";
-            this.btnLearn.Size = new System.Drawing.Size(42, 40);
-            this.btnLearn.TabIndex = 17;
-            this.btnLearn.Text = "   Изучить";
-            this.btnLearn.TextColor = System.Drawing.Color.White;
-            this.toolTip.SetToolTip(this.btnLearn, "Изучить");
-            this.btnLearn.UseVisualStyleBackColor = false;
-            this.btnLearn.Click += new System.EventHandler(this.btnLearn_Click);
+            this.btnPractice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btnPractice.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btnPractice.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPractice.BorderRadius = 10;
+            this.btnPractice.BorderSize = 0;
+            this.btnPractice.FlatAppearance.BorderSize = 0;
+            this.btnPractice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnPractice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnPractice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPractice.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnPractice.ForeColor = System.Drawing.Color.White;
+            this.btnPractice.Image = ((System.Drawing.Image)(resources.GetObject("btnPractice.Image")));
+            this.btnPractice.Location = new System.Drawing.Point(11, 98);
+            this.btnPractice.Name = "btnPractice";
+            this.btnPractice.Size = new System.Drawing.Size(42, 40);
+            this.btnPractice.TabIndex = 17;
+            this.btnPractice.Text = "   Практика";
+            this.btnPractice.TextColor = System.Drawing.Color.White;
+            this.toolTip.SetToolTip(this.btnPractice, "Изучить");
+            this.btnPractice.UseVisualStyleBackColor = false;
+            this.btnPractice.Click += new System.EventHandler(this.btnPractice_Click);
             // 
             // btnExplore
             // 
@@ -284,45 +343,14 @@
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // btnMinimize
+            // content
             // 
-            this.btnMinimize.BackColor = System.Drawing.Color.Black;
-            this.btnMinimize.BackgroundColor = System.Drawing.Color.Black;
-            this.btnMinimize.BorderColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.BorderRadius = 0;
-            this.btnMinimize.BorderSize = 0;
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(993, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(43, 44);
-            this.btnMinimize.TabIndex = 11;
-            this.btnMinimize.TextColor = System.Drawing.Color.White;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Black;
-            this.btnClose.BackgroundColor = System.Drawing.Color.Black;
-            this.btnClose.BorderColor = System.Drawing.Color.Transparent;
-            this.btnClose.BorderRadius = 0;
-            this.btnClose.BorderSize = 0;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1036, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(43, 44);
-            this.btnClose.TabIndex = 12;
-            this.btnClose.TextColor = System.Drawing.Color.White;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.content.BackColor = System.Drawing.Color.Black;
+            this.content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.content.Location = new System.Drawing.Point(64, 44);
+            this.content.Name = "content";
+            this.content.Size = new System.Drawing.Size(1015, 469);
+            this.content.TabIndex = 12;
             // 
             // toolTip
             // 
@@ -365,7 +393,7 @@
         public System.Windows.Forms.Panel sidebar;
         public CustomButton btnHome;
         public CustomButton btnExplore;
-        public CustomButton btnLearn;
+        public CustomButton btnPractice;
         public CustomButton btnStatistics;
         public CustomButton btnAbout;
         private CustomToolTip toolTip;
@@ -374,6 +402,7 @@
         public CustomButton btnSettings;
         private CustomButton btnClose;
         private CustomButton btnMinimize;
+        public CustomButton btnCreate;
     }
 }
 
