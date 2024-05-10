@@ -103,6 +103,7 @@ namespace HiraKata_Kaizen {
             return "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\HiraKata_Kaizen.mdf;Integrated Security=True;Connect Timeout=30";
         }
 
+        // Btns click
         void btnAnswer_Click(object sender, EventArgs e) {
             Button button = (Button)sender;
 
@@ -118,17 +119,7 @@ namespace HiraKata_Kaizen {
             LoadNextQuestion(); 
         }
 
-        void btnLearn_Click(object sender, EventArgs e) {
-            Dashboard dashboard = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
-            if (dashboard.content.Controls.Count > 0) dashboard.content.Controls.RemoveAt(0);
-            Learn learn = new Learn();
-            learn.TopLevel = false;
-            learn.Dock = DockStyle.Fill;
-            dashboard.content.Controls.Add(learn);
-            dashboard.content.Tag = learn;
-            learn.Show();
-        }
-
+        // Time to answer
         void timer_Tick(object sender, EventArgs e) {
             lblTimer.Text = "" + _timeToAnswer;
             if (_timeToAnswer > 0) {
@@ -139,5 +130,18 @@ namespace HiraKata_Kaizen {
                 LoadNextQuestion();
             }
         }
+
+        // Exit
+        void btnPractice_Click(object sender, EventArgs e) {
+            Dashboard dashboard = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
+            if (dashboard.content.Controls.Count > 0) dashboard.content.Controls.RemoveAt(0);
+            Practice Practice = new Practice();
+            Practice.TopLevel = false;
+            Practice.Dock = DockStyle.Fill;
+            dashboard.content.Controls.Add(Practice);
+            dashboard.content.Tag = Practice;
+            Practice.Show();
+        }
+
     }
 }
