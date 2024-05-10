@@ -39,7 +39,9 @@ namespace HiraKata_Kaizen {
             cmbQuestions.Texts = cmbQuestions.Items[0].ToString();
 
             // Answers
-            cmbAnswers.Texts = "Ромадзи";
+            string[] answers = { "Ромадзи", "Катакана" };
+            cmbAnswers.Items.AddRange(answers);
+            cmbAnswers.Texts = cmbAnswers.Items[0].ToString();
 
             if (openNext == "quiz") {
                 lblTitle.Text = "Настройка \"Викторина\"";
@@ -73,17 +75,21 @@ namespace HiraKata_Kaizen {
                 cmbQuestions.SelectedItem = choices.Count > 3 ? choices[2] : string.Empty;
             }
             if (choices.Count > 3) {
-                cmbAnswers.SelectedItem = choices.Count > 4 ? choices[3] : string.Empty;
+                // Check if the second-to-last item in the choices collection is the answer
+                string answer = choices[choices.Count - 2];
+                cmbAnswers.Texts = choices.Count > 4 ? choices[choices.Count - 1] : answer;
             }
         }
 
         void SaveSettings(StringCollection choices) {
-            choices = new StringCollection {
-                cmbTime.SelectedItem?.ToString(),
-                cmbNumber.SelectedItem?.ToString(),
-                cmbQuestions.SelectedItem?.ToString(),
-                cmbAnswers.SelectedItem?.ToString()
-            };
+            choices.Clear();
+            choices.Add(cmbTime.SelectedItem?.ToString());
+            choices.Add(cmbNumber.SelectedItem?.ToString());
+            choices.Add(cmbQuestions.SelectedItem?.ToString());
+            choices.Add(cmbAnswers.SelectedItem?.ToString()); 
+            if (cmbAnswers.SelectedItem != null) {
+                choices.Add(cmbAnswers.SelectedItem.ToString());
+            }
             if (openNext == "quiz") {
                 Properties.Settings.Default.choicesQuiz = choices;
             }
@@ -159,15 +165,15 @@ namespace HiraKata_Kaizen {
 
             switch (selectedQuestion) {
                 case "Хирагана":
-                    cmbAnswers.Items.Add("Катакана");
                     cmbAnswers.Items.Add("Ромадзи");
+                    cmbAnswers.Items.Add("Катакана");
                     if (selectedAnswer == selectedQuestion) {
                         cmbAnswers.SelectedIndex = 0;
                     }
                     break;
                 case "Катакана":
-                    cmbAnswers.Items.Add("Хирагана");
                     cmbAnswers.Items.Add("Ромадзи");
+                    cmbAnswers.Items.Add("Хирагана");
                     if (selectedAnswer == selectedQuestion) {
                         cmbAnswers.SelectedIndex = 0;
                     }
