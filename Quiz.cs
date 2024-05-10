@@ -21,7 +21,7 @@ namespace HiraKata_Kaizen {
             InitializeComponent();
 
             _timeToAnswer = Byte.Parse(cmbTime);
-            _totalQuestions = Byte.Parse(cmbNumber);
+            _totalQuestions = (byte)(Byte.Parse(cmbNumber) + 1);
             _questionType = cmbQuestions;
             _answerType = cmbAnswers;
             _cmbTime = cmbTime;
@@ -36,7 +36,9 @@ namespace HiraKata_Kaizen {
             LoadNextQuestion();
         }
 
+        byte totalScore;
         void LoadNextQuestion() {
+            totalTimer.Start();
             questionAndAnswers = GetQuestionAndAnswers();
 
             lblQuestion.Text = questionAndAnswers[0];
@@ -50,7 +52,7 @@ namespace HiraKata_Kaizen {
             btn3.Text = answers[2];
             btn4.Text = answers[3];
 
-            lblQuestions.Text = $"{_currentQuestionNumber}/{_totalQuestions}";
+            lblQuestions.Text = $"{_currentQuestionNumber}/{_totalQuestions - 1}";
 
             if (_currentQuestionNumber < _totalQuestions) {
                 // Reset timer
@@ -58,33 +60,60 @@ namespace HiraKata_Kaizen {
                 timer.Start(); // restart the timer
             }
             else {
+                totalTimer.Stop();
                 timer.Stop();
-                // TODO - hide panels, show panel - results
+                // hide panels
+                pnQuestions.Visible = false; pnQuestions.Enabled = false;
+                pnAnswers.Visible = false; pnAnswers.Enabled = false;
+                pnStatus.Visible = false; pnStatus.Enabled = false;
+                // move panel
+                btnPractice.Location = new Point(6, 416);
+                // show panel - results
+                pnResults.Visible = true; pnResults.Enabled = true;
+                lblResultCorrectAnswers.Text = lblCorrectAnswers.Text;
+                lblResultWrongAnswers.Text = lblWrongAnswers.Text;
+                lblResultUnanswered.Text = lblUnanswered.Text;
+                lblTotalAnswered.Text = "" + (Byte.Parse(lblCorrectAnswers.Text) + Byte.Parse(lblWrongAnswers.Text));
+                lblTotalQuestions.Text = "" + (_totalQuestions - 1);
+                lblTotalTime.Text = "" + elapsedSeconds + " секунд";
+
+                totalScore = ((byte)(Byte.Parse(lblCorrectAnswers.Text) / Double.Parse(lblTotalAnswered.Text) * 100));
+                lblTotalScore.Text = totalScore + "%";
             }
             _currentQuestionNumber++;
         }
 
+        string _enQuestionType, _enAnswerType;
         string[] GetQuestionAndAnswers() {
             using (SqlConnection connection = new SqlConnection(GetConnectionString())) {
                 connection.Open();
 
-                var query = "SELECT TOP 1 hiragana, romaji FROM japanese_characters ORDER BY NEWID()";
+                if (_questionType == "Хирагана") _enQuestionType = "hiragana";
+                else if (_questionType == "Катакана") _enQuestionType = "katakana";
+                else if (_questionType == "Ромадзи") _enQuestionType = "romaji";
+
+                if (_answerType == "Хирагана") _enAnswerType = "hiragana";
+                else if (_answerType == "Катакана") _enAnswerType = "katakana";
+                else if (_answerType == "Ромадзи") _enAnswerType = "romaji";
+
+                string query = $"SELECT TOP 1 {_enQuestionType}, {_enAnswerType} FROM japanese_characters ORDER BY NEWID()";
+
                 using (SqlCommand command = new SqlCommand(query, connection)) {
                     using (var reader = command.ExecuteReader()) {
                         if (reader.Read()) {
                             string[] questionAndAnswers = new string[5];
-                            questionAndAnswers[0] = reader["hiragana"].ToString(); // q
-                            questionAndAnswers[1] = reader["romaji"].ToString(); // a
+                            questionAndAnswers[0] = reader[_enQuestionType].ToString(); // q
+                            questionAndAnswers[1] = reader[_enAnswerType].ToString(); // a
 
                             reader.Close();
                             // 3 random a
-                            query = "SELECT TOP 3 romaji FROM japanese_characters WHERE hiragana!= @hiragana ORDER BY NEWID()";
+                            query = $"SELECT TOP 3 {_enAnswerType} FROM japanese_characters WHERE {_enQuestionType} != @{_enQuestionType} ORDER BY NEWID()";
                             using (SqlCommand command2 = new SqlCommand(query, connection)) {
-                                command2.Parameters.AddWithValue("@hiragana", questionAndAnswers[0]);
+                                command2.Parameters.AddWithValue($"@{_enQuestionType}", questionAndAnswers[0]);
                                 using (SqlDataReader reader2 = command2.ExecuteReader()) {
                                     byte i = 2;
                                     while (reader2.Read()) {
-                                        questionAndAnswers[i] = reader2["romaji"].ToString(); // 3 a
+                                        questionAndAnswers[i] = reader2[_enAnswerType].ToString(); // 3 a
                                         i++;
                                     }
                                 }
@@ -119,6 +148,7 @@ namespace HiraKata_Kaizen {
             LoadNextQuestion(); 
         }
 
+        byte unanswered;
         // Time to answer
         void timer_Tick(object sender, EventArgs e) {
             lblTimer.Text = "" + _timeToAnswer;
@@ -127,8 +157,15 @@ namespace HiraKata_Kaizen {
             }
             else {
                 timer.Stop();
+                unanswered++;
+                lblUnanswered.Text = unanswered.ToString();
                 LoadNextQuestion();
             }
+        }
+
+        byte elapsedSeconds;
+        void totalTimer_Tick(object sender, EventArgs e) {
+            elapsedSeconds++;
         }
 
         // Exit
@@ -142,6 +179,5 @@ namespace HiraKata_Kaizen {
             dashboard.content.Tag = Practice;
             Practice.Show();
         }
-
     }
 }
