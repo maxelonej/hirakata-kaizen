@@ -117,17 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="kataInfoTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="btnKatakana.ToolTip" xml:space="preserve">
-    <value>Японская слоговая азбука, которая представляет собой разновидность письменности, используемой в языке.
-Это одна из двух слоговых азбук, используемых в японской письменности, вторая - хирагана.
-Катакана состоит из 48 иероглифов, каждый из которых представляет свой звук в японском языке.
-Эти иероглифы образованы из компонентов или фрагментов более сложных кандзи, 
-которые являются еще одним компонентом японской письменности.
-Катакана используется в японском письме для различных целей,
-таких как транскрибирование иностранных слов и имен, представление
-звукоподражательных слов и подчеркивание определенных слов или фраз.</value>
-  </data>
 </root>
