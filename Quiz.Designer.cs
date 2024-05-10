@@ -23,228 +23,273 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Quiz));
-            this.btnHome = new HiraKata_Kaizen.CustomButton();
-            this.statusline = new HiraKata_Kaizen.CustomPanel();
-            this.label166 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.timeToAnswer = new System.Windows.Forms.Timer(this.components);
+            this.pnAnswers = new HiraKata_Kaizen.CustomPanel();
+            this.btn4 = new HiraKata_Kaizen.CustomButton();
+            this.btn1 = new HiraKata_Kaizen.CustomButton();
+            this.btn2 = new HiraKata_Kaizen.CustomButton();
+            this.btn3 = new HiraKata_Kaizen.CustomButton();
+            this.pnStatus = new HiraKata_Kaizen.CustomPanel();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.lblQuestions = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblQuestions = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btn4 = new HiraKata_Kaizen.CustomButton();
-            this.btn3 = new HiraKata_Kaizen.CustomButton();
-            this.btn2 = new HiraKata_Kaizen.CustomButton();
-            this.btn1 = new HiraKata_Kaizen.CustomButton();
-            this.customPanel1 = new HiraKata_Kaizen.CustomPanel();
+            this.lblWrongAnswers = new System.Windows.Forms.Label();
+            this.lblCorrectAnswers = new System.Windows.Forms.Label();
+            this.btnLearn = new HiraKata_Kaizen.CustomButton();
+            this.pnQuestions = new HiraKata_Kaizen.CustomPanel();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.toolTip = new HiraKata_Kaizen.CustomToolTip();
-            this.statusline.SuspendLayout();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.pnAnswers.SuspendLayout();
+            this.pnStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.customPanel1.SuspendLayout();
+            this.pnQuestions.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnHome
+            // timeToAnswer
             // 
-            this.btnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.btnHome.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.btnHome.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnHome.BorderRadius = 10;
-            this.btnHome.BorderSize = 0;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(20)))));
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Verdana", 14F);
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.Location = new System.Drawing.Point(11, 372);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.btnHome.Size = new System.Drawing.Size(49, 49);
-            this.btnHome.TabIndex = 16;
-            this.btnHome.TextColor = System.Drawing.Color.White;
-            this.toolTip.SetToolTip(this.btnHome, "Выйти");
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.timeToAnswer.Enabled = true;
+            this.timeToAnswer.Interval = 1000;
             // 
-            // statusline
+            // pnAnswers
             // 
-            this.statusline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.statusline.BorderRadius = ((byte)(0));
-            this.statusline.Controls.Add(this.label6);
-            this.statusline.Controls.Add(this.label166);
-            this.statusline.Controls.Add(this.pictureBox2);
-            this.statusline.Controls.Add(this.pictureBox1);
-            this.statusline.Controls.Add(this.lblQuestions);
-            this.statusline.Controls.Add(this.label4);
-            this.statusline.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.statusline.ForeColor = System.Drawing.Color.Snow;
-            this.statusline.Location = new System.Drawing.Point(0, 432);
-            this.statusline.Name = "statusline";
-            this.statusline.Size = new System.Drawing.Size(1015, 37);
-            this.statusline.TabIndex = 3;
-            // 
-            // label166
-            // 
-            this.label166.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label166.Location = new System.Drawing.Point(907, 2);
-            this.label166.Name = "label166";
-            this.label166.Size = new System.Drawing.Size(23, 28);
-            this.label166.TabIndex = 4;
-            this.label166.Text = "0";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(498, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 21);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "0";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(872, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(942, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblQuestions
-            // 
-            this.lblQuestions.AutoSize = true;
-            this.lblQuestions.Location = new System.Drawing.Point(12, 7);
-            this.lblQuestions.Name = "lblQuestions";
-            this.lblQuestions.Size = new System.Drawing.Size(61, 21);
-            this.lblQuestions.TabIndex = 1;
-            this.lblQuestions.Text = "0/1000";
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label4.Location = new System.Drawing.Point(980, 2);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 28);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "0";
+            this.pnAnswers.BackColor = System.Drawing.Color.Black;
+            this.pnAnswers.BorderRadius = ((byte)(30));
+            this.pnAnswers.Controls.Add(this.btn4);
+            this.pnAnswers.Controls.Add(this.btn1);
+            this.pnAnswers.Controls.Add(this.btn2);
+            this.pnAnswers.Controls.Add(this.btn3);
+            this.pnAnswers.ForeColor = System.Drawing.Color.Snow;
+            this.pnAnswers.Location = new System.Drawing.Point(370, 223);
+            this.pnAnswers.Name = "pnAnswers";
+            this.pnAnswers.Size = new System.Drawing.Size(274, 167);
+            this.pnAnswers.TabIndex = 17;
             // 
             // btn4
             // 
-            this.btn4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.btn4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btn4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btn4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
             this.btn4.BorderColor = System.Drawing.Color.Transparent;
             this.btn4.BorderRadius = 10;
             this.btn4.BorderSize = 0;
             this.btn4.FlatAppearance.BorderSize = 0;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn4.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btn4.ForeColor = System.Drawing.Color.White;
-            this.btn4.Location = new System.Drawing.Point(526, 322);
+            this.btn4.Location = new System.Drawing.Point(158, 93);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(161, 55);
+            this.btn4.Size = new System.Drawing.Size(68, 55);
             this.btn4.TabIndex = 2;
-            this.btn4.Tag = "4";
-            this.btn4.Text = "Вариант ответа 4";
+            this.btn4.Tag = "";
+            this.btn4.Text = "4dd";
             this.btn4.TextColor = System.Drawing.Color.White;
             this.btn4.UseVisualStyleBackColor = false;
-            this.btn4.Click += new System.EventHandler(this.CheckAnswer);
-            // 
-            // btn3
-            // 
-            this.btn3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.btn3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.btn3.BorderColor = System.Drawing.Color.Transparent;
-            this.btn3.BorderRadius = 10;
-            this.btn3.BorderSize = 0;
-            this.btn3.FlatAppearance.BorderSize = 0;
-            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn3.ForeColor = System.Drawing.Color.White;
-            this.btn3.Location = new System.Drawing.Point(328, 322);
-            this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(161, 55);
-            this.btn3.TabIndex = 2;
-            this.btn3.Tag = "3";
-            this.btn3.Text = "Вариант ответа 3";
-            this.btn3.TextColor = System.Drawing.Color.White;
-            this.btn3.UseVisualStyleBackColor = false;
-            this.btn3.Click += new System.EventHandler(this.CheckAnswer);
-            // 
-            // btn2
-            // 
-            this.btn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.btn2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.btn2.BorderColor = System.Drawing.Color.Transparent;
-            this.btn2.BorderRadius = 10;
-            this.btn2.BorderSize = 0;
-            this.btn2.FlatAppearance.BorderSize = 0;
-            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn2.ForeColor = System.Drawing.Color.White;
-            this.btn2.Location = new System.Drawing.Point(526, 252);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(161, 55);
-            this.btn2.TabIndex = 2;
-            this.btn2.Tag = "2";
-            this.btn2.Text = "Вариант ответа 2";
-            this.btn2.TextColor = System.Drawing.Color.White;
-            this.btn2.UseVisualStyleBackColor = false;
-            this.btn2.Click += new System.EventHandler(this.CheckAnswer);
+            this.btn4.Click += new System.EventHandler(this.btnAnswer_Click);
             // 
             // btn1
             // 
-            this.btn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.btn1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
+            this.btn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btn1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
             this.btn1.BorderColor = System.Drawing.Color.Transparent;
             this.btn1.BorderRadius = 10;
             this.btn1.BorderSize = 0;
             this.btn1.FlatAppearance.BorderSize = 0;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btn1.ForeColor = System.Drawing.Color.White;
-            this.btn1.Location = new System.Drawing.Point(328, 252);
+            this.btn1.Location = new System.Drawing.Point(48, 19);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(161, 55);
+            this.btn1.Size = new System.Drawing.Size(68, 55);
             this.btn1.TabIndex = 2;
-            this.btn1.Tag = "1";
-            this.btn1.Text = "Вариант ответа 1";
+            this.btn1.Tag = "";
+            this.btn1.Text = "1ch";
             this.btn1.TextColor = System.Drawing.Color.White;
             this.btn1.UseVisualStyleBackColor = false;
-            this.btn1.Click += new System.EventHandler(this.CheckAnswer);
+            this.btn1.Click += new System.EventHandler(this.btnAnswer_Click);
             // 
-            // customPanel1
+            // btn2
             // 
-            this.customPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btn2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btn2.BorderColor = System.Drawing.Color.Transparent;
+            this.btn2.BorderRadius = 10;
+            this.btn2.BorderSize = 0;
+            this.btn2.FlatAppearance.BorderSize = 0;
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn2.ForeColor = System.Drawing.Color.White;
+            this.btn2.Location = new System.Drawing.Point(158, 19);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(68, 55);
+            this.btn2.TabIndex = 2;
+            this.btn2.Tag = "";
+            this.btn2.Text = "2ts";
+            this.btn2.TextColor = System.Drawing.Color.White;
+            this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Click += new System.EventHandler(this.btnAnswer_Click);
+            // 
+            // btn3
+            // 
+            this.btn3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btn3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btn3.BorderColor = System.Drawing.Color.Transparent;
+            this.btn3.BorderRadius = 10;
+            this.btn3.BorderSize = 0;
+            this.btn3.FlatAppearance.BorderSize = 0;
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn3.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.btn3.ForeColor = System.Drawing.Color.White;
+            this.btn3.Location = new System.Drawing.Point(48, 93);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(68, 55);
+            this.btn3.TabIndex = 2;
+            this.btn3.Tag = "";
+            this.btn3.Text = "3sh";
+            this.btn3.TextColor = System.Drawing.Color.White;
+            this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Click += new System.EventHandler(this.btnAnswer_Click);
+            // 
+            // pnStatus
+            // 
+            this.pnStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.pnStatus.BorderRadius = ((byte)(0));
+            this.pnStatus.Controls.Add(this.lblTimer);
+            this.pnStatus.Controls.Add(this.lblQuestions);
+            this.pnStatus.Controls.Add(this.pictureBox2);
+            this.pnStatus.Controls.Add(this.pictureBox1);
+            this.pnStatus.Controls.Add(this.lblWrongAnswers);
+            this.pnStatus.Controls.Add(this.lblCorrectAnswers);
+            this.pnStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnStatus.ForeColor = System.Drawing.Color.Snow;
+            this.pnStatus.Location = new System.Drawing.Point(0, 427);
+            this.pnStatus.Name = "pnStatus";
+            this.pnStatus.Size = new System.Drawing.Size(1015, 42);
+            this.pnStatus.TabIndex = 3;
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Font = new System.Drawing.Font("Verdana", 14.25F);
+            this.lblTimer.Location = new System.Drawing.Point(477, 10);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(60, 23);
+            this.lblTimer.TabIndex = 1;
+            this.lblTimer.Text = "timer";
+            // 
+            // lblQuestions
+            // 
+            this.lblQuestions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(27)))));
-            this.customPanel1.BorderRadius = ((byte)(30));
-            this.customPanel1.Controls.Add(this.lblQuestion);
-            this.customPanel1.ForeColor = System.Drawing.Color.Snow;
-            this.customPanel1.Location = new System.Drawing.Point(339, 92);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(336, 140);
-            this.customPanel1.TabIndex = 1;
+            this.lblQuestions.AutoSize = true;
+            this.lblQuestions.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestions.Location = new System.Drawing.Point(12, 8);
+            this.lblQuestions.Name = "lblQuestions";
+            this.lblQuestions.Size = new System.Drawing.Size(138, 23);
+            this.lblQuestions.TabIndex = 0;
+            this.lblQuestions.Text = "сейчас/всего";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(951, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureBox2, "Количество неправильных ответов");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(885, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureBox1, "Количество правильных ответов");
+            // 
+            // lblWrongAnswers
+            // 
+            this.lblWrongAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWrongAnswers.AutoSize = true;
+            this.lblWrongAnswers.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWrongAnswers.Location = new System.Drawing.Point(976, 8);
+            this.lblWrongAnswers.Name = "lblWrongAnswers";
+            this.lblWrongAnswers.Size = new System.Drawing.Size(29, 23);
+            this.lblWrongAnswers.TabIndex = 0;
+            this.lblWrongAnswers.Text = "0 ";
+            this.lblWrongAnswers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCorrectAnswers
+            // 
+            this.lblCorrectAnswers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCorrectAnswers.AutoSize = true;
+            this.lblCorrectAnswers.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorrectAnswers.Location = new System.Drawing.Point(910, 8);
+            this.lblCorrectAnswers.Name = "lblCorrectAnswers";
+            this.lblCorrectAnswers.Size = new System.Drawing.Size(29, 23);
+            this.lblCorrectAnswers.TabIndex = 0;
+            this.lblCorrectAnswers.Text = "0 ";
+            this.lblCorrectAnswers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnLearn
+            // 
+            this.btnLearn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btnLearn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btnLearn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLearn.BorderRadius = 10;
+            this.btnLearn.BorderSize = 0;
+            this.btnLearn.FlatAppearance.BorderSize = 0;
+            this.btnLearn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLearn.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnLearn.ForeColor = System.Drawing.Color.White;
+            this.btnLearn.Image = ((System.Drawing.Image)(resources.GetObject("btnLearn.Image")));
+            this.btnLearn.Location = new System.Drawing.Point(7, 372);
+            this.btnLearn.Name = "btnLearn";
+            this.btnLearn.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.btnLearn.Size = new System.Drawing.Size(49, 49);
+            this.btnLearn.TabIndex = 16;
+            this.btnLearn.TextColor = System.Drawing.Color.White;
+            this.toolTip.SetToolTip(this.btnLearn, "Выйти");
+            this.btnLearn.UseVisualStyleBackColor = false;
+            this.btnLearn.Click += new System.EventHandler(this.btnLearn_Click);
+            // 
+            // pnQuestions
+            // 
+            this.pnQuestions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.pnQuestions.BorderRadius = ((byte)(30));
+            this.pnQuestions.Controls.Add(this.lblQuestion);
+            this.pnQuestions.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.pnQuestions.ForeColor = System.Drawing.Color.Snow;
+            this.pnQuestions.Location = new System.Drawing.Point(370, 79);
+            this.pnQuestions.Name = "pnQuestions";
+            this.pnQuestions.Size = new System.Drawing.Size(274, 134);
+            this.pnQuestions.TabIndex = 1;
             // 
             // lblQuestion
             // 
-            this.lblQuestion.AutoSize = true;
-            this.lblQuestion.Location = new System.Drawing.Point(137, 60);
+            this.lblQuestion.Font = new System.Drawing.Font("Yu Gothic", 22F);
+            this.lblQuestion.Location = new System.Drawing.Point(43, 48);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(62, 21);
+            this.lblQuestion.Size = new System.Drawing.Size(174, 39);
             this.lblQuestion.TabIndex = 0;
-            this.lblQuestion.Text = "Вопрос";
+            this.lblQuestion.Text = "lblQuestions";
+            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // toolTip
             // 
@@ -252,19 +297,21 @@
             this.toolTip.ForeColor = System.Drawing.Color.White;
             this.toolTip.OwnerDraw = true;
             // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // Quiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1015, 469);
-            this.Controls.Add(this.statusline);
-            this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.btn4);
-            this.Controls.Add(this.btn3);
-            this.Controls.Add(this.btn2);
-            this.Controls.Add(this.btn1);
-            this.Controls.Add(this.customPanel1);
+            this.Controls.Add(this.pnAnswers);
+            this.Controls.Add(this.pnStatus);
+            this.Controls.Add(this.btnLearn);
+            this.Controls.Add(this.pnQuestions);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ForeColor = System.Drawing.Color.Snow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -273,32 +320,35 @@
             this.Name = "Quiz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quiz";
-            this.statusline.ResumeLayout(false);
-            this.statusline.PerformLayout();
+            this.Load += new System.EventHandler(this.Quiz_Load);
+            this.pnAnswers.ResumeLayout(false);
+            this.pnStatus.ResumeLayout(false);
+            this.pnStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.customPanel1.ResumeLayout(false);
-            this.customPanel1.PerformLayout();
+            this.pnQuestions.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblQuestion;
-        private CustomPanel customPanel1;
+        private CustomPanel pnQuestions;
         private CustomButton btn1;
         private CustomButton btn2;
         private CustomButton btn3;
         private CustomButton btn4;
-        private CustomPanel statusline;
-        private System.Windows.Forms.Label lblQuestions;
-        public CustomButton btnHome;
+        private CustomPanel pnStatus;
+        public CustomButton btnLearn;
         private CustomToolTip toolTip;
+        private System.Windows.Forms.Timer timeToAnswer;
+        private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label166;
+        private System.Windows.Forms.Label lblWrongAnswers;
+        private System.Windows.Forms.Label lblCorrectAnswers;
+        private System.Windows.Forms.Label lblQuestions;
+        private CustomPanel pnAnswers;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Timer timer;
     }
 }

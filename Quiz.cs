@@ -1,134 +1,143 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Threading.Tasks;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace HiraKata_Kaizen {
     public partial class Quiz : Form {
-        byte _questionNumber = 1;
-        byte _score;
+        string _questionType;
+        string _answerType;
         byte _totalQuestions;
+        int _currentQuestionId;
+        byte _rightAnswers;
+        byte _wrongAnswers;
+        byte _currentQuestionNumber = 1;
+        byte _timeToAnswer;
+        string _cmbTime;
+        string[] questionAndAnswers;
 
-        public Quiz() {
+        public Quiz(string cmbTime, string cmbNumber, string cmbQuestions, string cmbAnswers) {
             InitializeComponent();
 
-            // Initialize totalQuestions variable
-            _totalQuestions = 3;
+            _timeToAnswer = Byte.Parse(cmbTime);
+            _totalQuestions = Byte.Parse(cmbNumber);
+            _questionType = cmbQuestions;
+            _answerType = cmbAnswers;
+            _cmbTime = cmbTime;
 
-            // Display the first question
-            AskQuestion(_questionNumber);
+            int x = (pnQuestions.Size.Width - pnQuestions.Size.Width) / 2;
+            lblQuestion.Location = new Point(x, lblQuestion.Location.Y);
+            lblQuestion.Location = new Point((pnQuestions.Width - lblQuestion.Width) / 2, (pnQuestions.Height - lblQuestion.Height) / 2);
         }
 
-        void btnClose_Click(object sender, EventArgs e) {
-            Application.Exit();
+        void Quiz_Load(object sender, EventArgs e) {
+            timer.Start();
+            LoadNextQuestion();
         }
 
-        void btnMinimize_Click(object sender, EventArgs e) {
-            WindowState = FormWindowState.Minimized;
-        }
+        void LoadNextQuestion() {
+            questionAndAnswers = GetQuestionAndAnswers();
 
-        void btnHome_Click(object sender, EventArgs e) {
-            Hide();
-            new Dashboard().Show();
-        }
+            lblQuestion.Text = questionAndAnswers[0];
 
-        // Shuffle button texts to randomize the location of the correct answer
-        void ShuffleButtons(string[] options) {
-            Random rnd = new Random();
+            // Shuffle the answers
+            string[] answers = questionAndAnswers.Skip(1).ToArray();
+            answers.Shuffle();
 
-            for (byte i = (byte)(options.Length - 1); i > 0; i--) {
-                byte j = (byte)rnd.Next(i + 1);
-                string temp = options[i];
-                options[i] = options[j];
-                options[j] = temp;
+            btn1.Text = answers[0];
+            btn2.Text = answers[1];
+            btn3.Text = answers[2];
+            btn4.Text = answers[3];
+
+            lblQuestions.Text = $"{_currentQuestionNumber}/{_totalQuestions}";
+
+            if (_currentQuestionNumber < _totalQuestions) {
+                // Reset timer
+                _timeToAnswer = Byte.Parse(_cmbTime); // reset the timer value
+                timer.Start(); // restart the timer
             }
-
-            btn1.Text = options[0];
-            btn2.Text = options[1];
-            btn3.Text = options[2];
-            btn4.Text = options[3];
+            else {
+                timer.Stop();
+                // TODO - hide panels, show panel - results
+            }
+            _currentQuestionNumber++;
         }
 
-        // Display a question and its options
-        void AskQuestion(byte questionNumber) {
-            Database db = new Database();
-            db.openConnection();
+        string[] GetQuestionAndAnswers() {
+            using (SqlConnection connection = new SqlConnection(GetConnectionString())) {
+                connection.Open();
 
-            using (SqlConnection connection = db.getConnection()) {
-
-                string query = "SELECT question, first_answer, second_answer, third_answer, fourth_answer, correct_answer FROM questions WHERE question_id = @questionNumber";
+                var query = "SELECT TOP 1 hiragana, romaji FROM japanese_characters ORDER BY NEWID()";
                 using (SqlCommand command = new SqlCommand(query, connection)) {
-                    command.Parameters.AddWithValue("@questionNumber", questionNumber);
-
-                    using (SqlDataReader reader = command.ExecuteReader()) {
+                    using (var reader = command.ExecuteReader()) {
                         if (reader.Read()) {
-                            lblQuestion.Text = reader["question"].ToString();
-                            string[] options = new string[] { reader["first_answer"].ToString(), reader["second_answer"].ToString(), reader["third_answer"].ToString(), reader["fourth_answer"].ToString() };
-                            byte correctAnswer = Convert.ToByte(reader["correct_answer"]);
-                            // Display the current question number and the total number of questions
-                            lblQuestions.Text = $"{questionNumber}/{_totalQuestions}";
+                            string[] questionAndAnswers = new string[5];
+                            questionAndAnswers[0] = reader["hiragana"].ToString(); // q
+                            questionAndAnswers[1] = reader["romaji"].ToString(); // a
 
-                            // Shuffle the options
-                            ShuffleButtons(options);
-
-                            // Set the correct answer tag
-                            switch (correctAnswer) {
-                                case 1:
-                                    btn1.Tag = correctAnswer;
-                                    break;
-                                case 2:
-                                    btn2.Tag = correctAnswer;
-                                    break;
-                                case 3:
-                                    btn3.Tag = correctAnswer;
-                                    break;
-                                case 4:
-                                    btn4.Tag = correctAnswer;
-                                    break;
+                            reader.Close();
+                            // 3 random a
+                            query = "SELECT TOP 3 romaji FROM japanese_characters WHERE hiragana!= @hiragana ORDER BY NEWID()";
+                            using (SqlCommand command2 = new SqlCommand(query, connection)) {
+                                command2.Parameters.AddWithValue("@hiragana", questionAndAnswers[0]);
+                                using (SqlDataReader reader2 = command2.ExecuteReader()) {
+                                    byte i = 2;
+                                    while (reader2.Read()) {
+                                        questionAndAnswers[i] = reader2["romaji"].ToString(); // 3 a
+                                        i++;
+                                    }
+                                }
                             }
+
+                            return questionAndAnswers;
                         }
                     }
                 }
             }
 
-            db.closeConnection();
+            return null;
         }
 
-        // btnClick
-        void CheckAnswer(object sender, EventArgs e) {
-            var senderObject = (Button)sender;
-            byte buttonTag = Convert.ToByte(senderObject.Tag);
-            bool isCorrect = buttonTag == 1; // assuming correct answer is 1
+        string GetConnectionString() {
+            return "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\HiraKata_Kaizen.mdf;Integrated Security=True;Connect Timeout=30";
+        }
 
-            // Change the button's backcolor based on the answer's correctness
-            senderObject.BackColor = isCorrect ? Color.Green : Color.Red;
+        void btnAnswer_Click(object sender, EventArgs e) {
+            Button button = (Button)sender;
 
-            // Reset the button's backcolor after a second
-            Task.Delay(1000).ContinueWith(t => {
-                if (InvokeRequired)
-                    Invoke((MethodInvoker)delegate { senderObject.BackColor = SystemColors.Control; });
-                else
-                    senderObject.BackColor = SystemColors.Control;
-            });
-
-            // Continue with the existing code
-            if (isCorrect) {
-                _score++;
+            if (button.Text == questionAndAnswers[1]) {
+                _rightAnswers++;
+                lblCorrectAnswers.Text = _rightAnswers.ToString();
             }
-            _questionNumber++;
-
-            // If all questions have been answered, display the results
-            if (_questionNumber > _totalQuestions) {
-                double percentage = (double)_score * 100 / _totalQuestions;
-                MessageBox.Show($"Your score is: {_score}/{_totalQuestions} ({percentage}%)");
-                Hide();
-                new Dashboard().Show();
-                return;
+            else {
+                _wrongAnswers++;
+                lblWrongAnswers.Text = _wrongAnswers.ToString();
             }
 
-            // Display the next question
-            AskQuestion(_questionNumber);
+            LoadNextQuestion(); 
+        }
+
+        void btnLearn_Click(object sender, EventArgs e) {
+            Dashboard dashboard = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
+            if (dashboard.content.Controls.Count > 0) dashboard.content.Controls.RemoveAt(0);
+            Learn learn = new Learn();
+            learn.TopLevel = false;
+            learn.Dock = DockStyle.Fill;
+            dashboard.content.Controls.Add(learn);
+            dashboard.content.Tag = learn;
+            learn.Show();
+        }
+
+        void timer_Tick(object sender, EventArgs e) {
+            lblTimer.Text = "" + _timeToAnswer;
+            if (_timeToAnswer > 0) {
+                _timeToAnswer--;
+            }
+            else {
+                timer.Stop();
+                LoadNextQuestion();
+            }
         }
     }
 }
