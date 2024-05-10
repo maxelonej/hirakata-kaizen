@@ -34,5 +34,60 @@ namespace HiraKata_Kaizen.Properties {
                 this["lastOpenedFilter"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection choicesQuiz {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["choicesQuiz"]));
+            }
+            set {
+                this["choicesQuiz"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection choicesMatch {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["choicesMatch"]));
+            }
+            set {
+                this["choicesMatch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection choicesCards {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["choicesCards"]));
+            }
+            set {
+                this["choicesCards"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection choicesDrag {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["choicesDrag"]));
+            }
+            set {
+                this["choicesDrag"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\HiraKata_Kaiz" +
+            "en.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string hirakata_kaizenConnectionString {
+            get {
+                return ((string)(this["hirakata_kaizenConnectionString"]));
+            }
+        }
     }
 }
