@@ -16,7 +16,7 @@ namespace HiraKata_Kaizen {
             initialSize = Size;
 
             btnMinimize.FlatAppearance.MouseOverBackColor = Color.FromArgb(60, Color.White);
-            btnClose.FlatAppearance.MouseOverBackColor = Color.Red;
+            btnMinimize.FlatAppearance.MouseDownBackColor = Color.FromArgb(60, Color.White);
         }
 
         public void loadForm(object Form) {
@@ -110,8 +110,8 @@ namespace HiraKata_Kaizen {
             loadForm(new Explore());
             ChangeButtonColor(sender as Button);
         }
-        void btnLearn_Click(object sender, EventArgs e) {
-            loadForm(new Learn());
+        void btnPractice_Click(object sender, EventArgs e) {
+            loadForm(new Practice());
             ChangeButtonColor(sender as Button);
         }
         void btnStatistics_Click(object sender, EventArgs e) {
@@ -126,6 +126,16 @@ namespace HiraKata_Kaizen {
             loadForm(new Settings());
             ChangeButtonColor(sender as Button);
         }
+
+        void btnCreate_Click(object sender, EventArgs e) {
+            loadForm(new Create());
+            ChangeButtonColor(sender as Button);
+        }
+
+        private void btnLearn_Click(object sender, EventArgs e) {
+
+        }
+
         void btnAbout_Click(object sender, EventArgs e) {
             loadForm(new About());
             ChangeButtonColor(sender as Button);
