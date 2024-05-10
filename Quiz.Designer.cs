@@ -38,7 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblWrongAnswers = new System.Windows.Forms.Label();
             this.lblCorrectAnswers = new System.Windows.Forms.Label();
-            this.btnLearn = new HiraKata_Kaizen.CustomButton();
+            this.btnPractice = new HiraKata_Kaizen.CustomButton();
             this.pnQuestions = new HiraKata_Kaizen.CustomPanel();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.toolTip = new HiraKata_Kaizen.CustomToolTip();
@@ -243,28 +243,28 @@
             this.lblCorrectAnswers.Text = "0 ";
             this.lblCorrectAnswers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnLearn
+            // btnPractice
             // 
-            this.btnLearn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLearn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.btnLearn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.btnLearn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLearn.BorderRadius = 10;
-            this.btnLearn.BorderSize = 0;
-            this.btnLearn.FlatAppearance.BorderSize = 0;
-            this.btnLearn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLearn.Font = new System.Drawing.Font("Verdana", 14F);
-            this.btnLearn.ForeColor = System.Drawing.Color.White;
-            this.btnLearn.Image = ((System.Drawing.Image)(resources.GetObject("btnLearn.Image")));
-            this.btnLearn.Location = new System.Drawing.Point(7, 372);
-            this.btnLearn.Name = "btnLearn";
-            this.btnLearn.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.btnLearn.Size = new System.Drawing.Size(49, 49);
-            this.btnLearn.TabIndex = 16;
-            this.btnLearn.TextColor = System.Drawing.Color.White;
-            this.toolTip.SetToolTip(this.btnLearn, "Выйти");
-            this.btnLearn.UseVisualStyleBackColor = false;
-            this.btnLearn.Click += new System.EventHandler(this.btnLearn_Click);
+            this.btnPractice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPractice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btnPractice.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.btnPractice.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPractice.BorderRadius = 10;
+            this.btnPractice.BorderSize = 0;
+            this.btnPractice.FlatAppearance.BorderSize = 0;
+            this.btnPractice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPractice.Font = new System.Drawing.Font("Verdana", 14F);
+            this.btnPractice.ForeColor = System.Drawing.Color.White;
+            this.btnPractice.Image = ((System.Drawing.Image)(resources.GetObject("btnPractice.Image")));
+            this.btnPractice.Location = new System.Drawing.Point(6, 371);
+            this.btnPractice.Name = "btnPractice";
+            this.btnPractice.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.btnPractice.Size = new System.Drawing.Size(49, 49);
+            this.btnPractice.TabIndex = 16;
+            this.btnPractice.TextColor = System.Drawing.Color.White;
+            this.toolTip.SetToolTip(this.btnPractice, "Выйти");
+            this.btnPractice.UseVisualStyleBackColor = false;
+            this.btnPractice.Click += new System.EventHandler(this.btnPractice_Click);
             // 
             // pnQuestions
             // 
@@ -310,7 +310,7 @@
             this.ClientSize = new System.Drawing.Size(1015, 469);
             this.Controls.Add(this.pnAnswers);
             this.Controls.Add(this.pnStatus);
-            this.Controls.Add(this.btnLearn);
+            this.Controls.Add(this.btnPractice);
             this.Controls.Add(this.pnQuestions);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ForeColor = System.Drawing.Color.Snow;
@@ -338,7 +338,7 @@
         private CustomButton btn3;
         private CustomButton btn4;
         private CustomPanel pnStatus;
-        public CustomButton btnLearn;
+        public CustomButton btnPractice;
         private CustomToolTip toolTip;
         private System.Windows.Forms.Timer timeToAnswer;
         private System.Windows.Forms.Label lblQuestion;
