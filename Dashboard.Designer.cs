@@ -206,6 +206,7 @@
             this.btnCreate.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnCreate.BorderRadius = 10;
             this.btnCreate.BorderSize = 0;
+            this.btnCreate.Enabled = false;
             this.btnCreate.FlatAppearance.BorderSize = 0;
             this.btnCreate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.btnCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -213,7 +214,7 @@
             this.btnCreate.Font = new System.Drawing.Font("Verdana", 14F);
             this.btnCreate.ForeColor = System.Drawing.Color.White;
             this.btnCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.Image")));
-            this.btnCreate.Location = new System.Drawing.Point(11, 190);
+            this.btnCreate.Location = new System.Drawing.Point(11, 323);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(42, 40);
             this.btnCreate.TabIndex = 17;
@@ -221,6 +222,7 @@
             this.btnCreate.TextColor = System.Drawing.Color.White;
             this.toolTip.SetToolTip(this.btnCreate, "Создать пак иероглифов");
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Visible = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnAbout
@@ -237,7 +239,7 @@
             this.btnAbout.Font = new System.Drawing.Font("Verdana", 14F);
             this.btnAbout.ForeColor = System.Drawing.Color.White;
             this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.Location = new System.Drawing.Point(12, 236);
+            this.btnAbout.Location = new System.Drawing.Point(11, 144);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(42, 40);
             this.btnAbout.TabIndex = 17;
@@ -254,6 +256,7 @@
             this.btnStatistics.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnStatistics.BorderRadius = 10;
             this.btnStatistics.BorderSize = 0;
+            this.btnStatistics.Enabled = false;
             this.btnStatistics.FlatAppearance.BorderSize = 0;
             this.btnStatistics.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.btnStatistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -261,7 +264,7 @@
             this.btnStatistics.Font = new System.Drawing.Font("Verdana", 14F);
             this.btnStatistics.ForeColor = System.Drawing.Color.White;
             this.btnStatistics.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistics.Image")));
-            this.btnStatistics.Location = new System.Drawing.Point(11, 144);
+            this.btnStatistics.Location = new System.Drawing.Point(12, 277);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.Size = new System.Drawing.Size(42, 40);
             this.btnStatistics.TabIndex = 17;
@@ -269,6 +272,7 @@
             this.btnStatistics.TextColor = System.Drawing.Color.White;
             this.toolTip.SetToolTip(this.btnStatistics, "Статистика");
             this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Visible = false;
             this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // btnPractice
@@ -291,7 +295,7 @@
             this.btnPractice.TabIndex = 17;
             this.btnPractice.Text = "   Практика";
             this.btnPractice.TextColor = System.Drawing.Color.White;
-            this.toolTip.SetToolTip(this.btnPractice, "Изучить");
+            this.toolTip.SetToolTip(this.btnPractice, "Практика");
             this.btnPractice.UseVisualStyleBackColor = false;
             this.btnPractice.Click += new System.EventHandler(this.btnPractice_Click);
             // 
