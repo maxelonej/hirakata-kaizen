@@ -75,7 +75,15 @@ namespace HiraKata_Kaizen {
                 lblResultUnanswered.Text = lblUnanswered.Text;
                 lblTotalAnswered.Text = "" + (Byte.Parse(lblCorrectAnswers.Text) + Byte.Parse(lblWrongAnswers.Text));
                 lblTotalQuestions.Text = "" + (_totalQuestions - 1);
-                lblTotalTime.Text = "" + elapsedSeconds + " секунд";
+                if (elapsedSeconds == 3 || elapsedSeconds == 4 || elapsedSeconds == 2) {
+                    lblTotalTime.Text = "" + elapsedSeconds + " секунды";
+                }
+                else if (elapsedSeconds == 1) {
+                    lblTotalTime.Text = "" + elapsedSeconds + " секунда";
+                }
+                else {
+                    lblTotalTime.Text = "" + elapsedSeconds + " секунд";
+                }
 
                 totalScore = ((byte)(Byte.Parse(lblCorrectAnswers.Text) / Double.Parse(lblTotalAnswered.Text) * 100));
                 lblTotalScore.Text = totalScore + "%";
