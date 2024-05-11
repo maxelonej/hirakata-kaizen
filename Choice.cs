@@ -44,19 +44,19 @@ namespace HiraKata_Kaizen {
             cmbAnswers.Texts = cmbAnswers.Items[0].ToString();
 
             if (openNext == "quiz") {
-                lblTitle.Text = "Настройка \"Викторина\"";
+                lblTitle.Text = "Настройка для викторины";
                 LoadSettings(Properties.Settings.Default.choicesQuiz);
             }
             else if (openNext == "cards") {
-                lblTitle.Text = "Настройка \"Карты\"";
+                lblTitle.Text = "Настройка для карт";
                 LoadSettings(Properties.Settings.Default.choicesCards);
             }
             else if (openNext == "match") {
-                lblTitle.Text = "Настройка \"Соответствие\"";
+                lblTitle.Text = "Настройка для соответствий (match)";
                 LoadSettings(Properties.Settings.Default.choicesMatch);
             }
             else if (openNext == "drag") {
-                lblTitle.Text = "Настройка \"Перетаскивание\"";
+                lblTitle.Text = "Настройка для перетаскиваний (drag'n'drop)";
                 LoadSettings(Properties.Settings.Default.choicesDrag);
             }
 

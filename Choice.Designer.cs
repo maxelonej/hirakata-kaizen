@@ -67,10 +67,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.lblTitle.Location = new System.Drawing.Point(483, 23);
+            this.lblTitle.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(494, 31);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(48, 25);
+            this.lblTitle.Size = new System.Drawing.Size(59, 23);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Title";
             // 
@@ -87,7 +87,7 @@
             this.btnPractice.Font = new System.Drawing.Font("Verdana", 14F);
             this.btnPractice.ForeColor = System.Drawing.Color.White;
             this.btnPractice.Image = ((System.Drawing.Image)(resources.GetObject("btnPractice.Image")));
-            this.btnPractice.Location = new System.Drawing.Point(394, 401);
+            this.btnPractice.Location = new System.Drawing.Point(394, 394);
             this.btnPractice.Name = "btnPractice";
             this.btnPractice.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.btnPractice.Size = new System.Drawing.Size(47, 44);
@@ -107,7 +107,7 @@
             this.btnStart.FlatAppearance.BorderSize = 0;
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(479, 404);
+            this.btnStart.Location = new System.Drawing.Point(479, 397);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(150, 40);
             this.btnStart.TabIndex = 5;
@@ -123,7 +123,7 @@
             this.customPanel5.Controls.Add(this.cmbAnswers);
             this.customPanel5.Controls.Add(this.label7);
             this.customPanel5.ForeColor = System.Drawing.Color.Snow;
-            this.customPanel5.Location = new System.Drawing.Point(322, 330);
+            this.customPanel5.Location = new System.Drawing.Point(322, 304);
             this.customPanel5.Name = "customPanel5";
             this.customPanel5.Size = new System.Drawing.Size(370, 51);
             this.customPanel5.TabIndex = 3;
@@ -163,7 +163,7 @@
             this.customPanel4.Controls.Add(this.cmbQuestions);
             this.customPanel4.Controls.Add(this.label6);
             this.customPanel4.ForeColor = System.Drawing.Color.Snow;
-            this.customPanel4.Location = new System.Drawing.Point(323, 261);
+            this.customPanel4.Location = new System.Drawing.Point(322, 234);
             this.customPanel4.Name = "customPanel4";
             this.customPanel4.Size = new System.Drawing.Size(370, 51);
             this.customPanel4.TabIndex = 3;
@@ -204,7 +204,7 @@
             this.customPanel3.Controls.Add(this.cmbNumber);
             this.customPanel3.Controls.Add(this.label5);
             this.customPanel3.ForeColor = System.Drawing.Color.Snow;
-            this.customPanel3.Location = new System.Drawing.Point(323, 192);
+            this.customPanel3.Location = new System.Drawing.Point(322, 166);
             this.customPanel3.Name = "customPanel3";
             this.customPanel3.Size = new System.Drawing.Size(370, 51);
             this.customPanel3.TabIndex = 3;
@@ -244,7 +244,7 @@
             this.customPanel2.Controls.Add(this.cmbTime);
             this.customPanel2.Controls.Add(this.label4);
             this.customPanel2.ForeColor = System.Drawing.Color.Snow;
-            this.customPanel2.Location = new System.Drawing.Point(323, 124);
+            this.customPanel2.Location = new System.Drawing.Point(322, 99);
             this.customPanel2.Name = "customPanel2";
             this.customPanel2.Size = new System.Drawing.Size(370, 51);
             this.customPanel2.TabIndex = 4;
@@ -328,10 +328,11 @@
             this.customPanel6.Controls.Add(this.cmbPack);
             this.customPanel6.Controls.Add(this.label3);
             this.customPanel6.ForeColor = System.Drawing.Color.Snow;
-            this.customPanel6.Location = new System.Drawing.Point(323, 57);
+            this.customPanel6.Location = new System.Drawing.Point(12, 12);
             this.customPanel6.Name = "customPanel6";
             this.customPanel6.Size = new System.Drawing.Size(370, 51);
             this.customPanel6.TabIndex = 2;
+            this.customPanel6.Visible = false;
             // 
             // cmbPack
             // 

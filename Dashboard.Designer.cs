@@ -239,7 +239,7 @@
             this.btnAbout.Font = new System.Drawing.Font("Verdana", 14F);
             this.btnAbout.ForeColor = System.Drawing.Color.White;
             this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.Location = new System.Drawing.Point(11, 144);
+            this.btnAbout.Location = new System.Drawing.Point(11, 101);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(42, 40);
             this.btnAbout.TabIndex = 17;
@@ -289,7 +289,7 @@
             this.btnPractice.Font = new System.Drawing.Font("Verdana", 14F);
             this.btnPractice.ForeColor = System.Drawing.Color.White;
             this.btnPractice.Image = ((System.Drawing.Image)(resources.GetObject("btnPractice.Image")));
-            this.btnPractice.Location = new System.Drawing.Point(11, 98);
+            this.btnPractice.Location = new System.Drawing.Point(11, 55);
             this.btnPractice.Name = "btnPractice";
             this.btnPractice.Size = new System.Drawing.Size(42, 40);
             this.btnPractice.TabIndex = 17;
@@ -313,7 +313,7 @@
             this.btnExplore.Font = new System.Drawing.Font("Verdana", 14F);
             this.btnExplore.ForeColor = System.Drawing.Color.White;
             this.btnExplore.Image = ((System.Drawing.Image)(resources.GetObject("btnExplore.Image")));
-            this.btnExplore.Location = new System.Drawing.Point(11, 52);
+            this.btnExplore.Location = new System.Drawing.Point(12, 9);
             this.btnExplore.Name = "btnExplore";
             this.btnExplore.Size = new System.Drawing.Size(42, 40);
             this.btnExplore.TabIndex = 16;
@@ -330,6 +330,7 @@
             this.btnHome.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnHome.BorderRadius = 10;
             this.btnHome.BorderSize = 0;
+            this.btnHome.Enabled = false;
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
@@ -337,7 +338,7 @@
             this.btnHome.Font = new System.Drawing.Font("Verdana", 14F);
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.Location = new System.Drawing.Point(11, 6);
+            this.btnHome.Location = new System.Drawing.Point(11, 231);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(42, 40);
             this.btnHome.TabIndex = 15;
@@ -345,6 +346,7 @@
             this.btnHome.TextColor = System.Drawing.Color.White;
             this.toolTip.SetToolTip(this.btnHome, "Главная");
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Visible = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // content

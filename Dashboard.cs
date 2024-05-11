@@ -44,8 +44,8 @@ namespace HiraKata_Kaizen {
 
         void Dashboard_Load(object sender, EventArgs e) {
             GetSettings(); // Load settings 
-            loadForm(new Home());
-            ChangeButtonColor(btnHome); 
+            loadForm(new Explore());
+            ChangeButtonColor(btnExplore); 
         }
         
         void btnMinimize_Click(object sender, EventArgs e) {
