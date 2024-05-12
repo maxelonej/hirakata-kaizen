@@ -539,11 +539,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1015, 469);
-            this.Controls.Add(this.pnResults);
             this.Controls.Add(this.pnAnswers);
             this.Controls.Add(this.pnStatus);
             this.Controls.Add(this.btnPractice);
             this.Controls.Add(this.pnQuestions);
+            this.Controls.Add(this.pnResults);
             this.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ForeColor = System.Drawing.Color.Snow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
