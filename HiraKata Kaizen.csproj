@@ -149,6 +149,12 @@
       <DependentUpon>Achievements.cs</DependentUpon>
     </Compile>
     <Compile Include="ArrayExtensions.cs" />
+    <Compile Include="Cards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cards.Designer.cs">
+      <DependentUpon>Cards.cs</DependentUpon>
+    </Compile>
     <Compile Include="Choice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Achievements.resx">
       <DependentUpon>Achievements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cards.resx">
+      <DependentUpon>Cards.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Choice.resx">
       <DependentUpon>Choice.cs</DependentUpon>
