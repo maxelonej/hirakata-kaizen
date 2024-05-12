@@ -6,15 +6,21 @@ using System.Windows.Forms;
 
 namespace HiraKata_Kaizen {
     public partial class Quiz : Form {
-        string _questionType;
-        string _answerType;
+        byte _timeToAnswer;
         byte _totalQuestions;
-        int _currentQuestionId;
         byte _rightAnswers;
         byte _wrongAnswers;
         byte _currentQuestionNumber = 1;
-        byte _timeToAnswer;
+        byte totalScore;
+        byte elapsedSeconds;
+        byte unanswered;
+
+        string _questionType;
+        string _answerType;
         string _cmbTime;
+        string _enQuestionType;
+        string _enAnswerType;
+
         string[] questionAndAnswers;
 
         public Quiz(string cmbTime, string cmbNumber, string cmbQuestions, string cmbAnswers) {
@@ -36,7 +42,6 @@ namespace HiraKata_Kaizen {
             LoadNextQuestion();
         }
 
-        byte totalScore;
         void LoadNextQuestion() {
             totalTimer.Start();
             questionAndAnswers = GetQuestionAndAnswers();
@@ -91,7 +96,6 @@ namespace HiraKata_Kaizen {
             _currentQuestionNumber++;
         }
 
-        string _enQuestionType, _enAnswerType;
         string[] GetQuestionAndAnswers() {
             using (SqlConnection connection = new SqlConnection(GetConnectionString())) {
                 connection.Open();
@@ -107,7 +111,7 @@ namespace HiraKata_Kaizen {
                 string query = $"SELECT TOP 1 {_enQuestionType}, {_enAnswerType} FROM japanese_characters ORDER BY NEWID()";
 
                 using (SqlCommand command = new SqlCommand(query, connection)) {
-                    using (var reader = command.ExecuteReader()) {
+                    using (SqlDataReader reader = command.ExecuteReader()) {
                         if (reader.Read()) {
                             string[] questionAndAnswers = new string[5];
                             questionAndAnswers[0] = reader[_enQuestionType].ToString(); // q
@@ -156,7 +160,6 @@ namespace HiraKata_Kaizen {
             LoadNextQuestion(); 
         }
 
-        byte unanswered;
         // Time to answer
         void timer_Tick(object sender, EventArgs e) {
             lblTimer.Text = "" + _timeToAnswer;
@@ -171,7 +174,6 @@ namespace HiraKata_Kaizen {
             }
         }
 
-        byte elapsedSeconds;
         void totalTimer_Tick(object sender, EventArgs e) {
             elapsedSeconds++;
         }
