@@ -7,6 +7,7 @@ using System.Windows.Forms;
 namespace HiraKata_Kaizen {
     public partial class Choice : Form {
         public string openNext;
+        public string selectedAnswer;
         Dashboard dashboard = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
 
         public Choice() {
@@ -39,9 +40,13 @@ namespace HiraKata_Kaizen {
             cmbQuestions.Texts = cmbQuestions.Items[0].ToString();
 
             // Answers
+            cmbAnswers.Items.Clear();
             string[] answers = { "Ромадзи", "Катакана" };
             cmbAnswers.Items.AddRange(answers);
-            cmbAnswers.Texts = cmbAnswers.Items[0].ToString();
+            cmbAnswers.Text = cmbAnswers.Items[0].ToString(); // Set the text of the combobox
+                                                              // or
+            cmbAnswers.SelectedIndex = 0; // Set the first item as selected
+            selectedAnswer = cmbAnswers.SelectedItem.ToString();
 
             if (openNext == "quiz") {
                 lblTitle.Text = "Настройка для викторины";
@@ -78,6 +83,16 @@ namespace HiraKata_Kaizen {
                 // Check if the second-to-last item in the choices collection is the answer
                 string answer = choices[choices.Count - 2];
                 cmbAnswers.Texts = choices.Count > 4 ? choices[choices.Count - 1] : answer;
+                // a == q then a = [0]
+                // if a.texts doesnt exist in items then items[0]
+                if (!cmbAnswers.Items.Contains(cmbAnswers.Text)) {
+                    cmbAnswers.SelectedIndex = 0;
+                }
+                selectedAnswer = cmbAnswers.Texts;
+            }
+            if (cmbQuestions.Texts == cmbAnswers.Texts) {
+                cmbAnswers.SelectedIndex = 0;
+                selectedAnswer = cmbAnswers.Texts;
             }
         }
 
@@ -120,6 +135,14 @@ namespace HiraKata_Kaizen {
             }
             else if (openNext == "cards") {
                 SaveSettings(Properties.Settings.Default.choicesCards);
+
+                if (dashboard.content.Controls.Count > 0) dashboard.content.Controls.RemoveAt(0);
+                Cards cards = new Cards(cmbTime.Texts, cmbNumber.Texts, cmbQuestions.Texts, cmbAnswers.Texts);
+                cards.TopLevel = false;
+                cards.Dock = DockStyle.Fill;
+                dashboard.content.Controls.Add(cards);
+                dashboard.content.Tag = cards;
+                cards.Show();
             }
             else if (openNext == "match") {
                 SaveSettings(Properties.Settings.Default.choicesMatch);
@@ -157,31 +180,27 @@ namespace HiraKata_Kaizen {
         void cmbQuestions_OnSelectedIndexChanged(object sender, EventArgs e) {
             string selectedQuestion = cmbQuestions.SelectedItem.ToString();
 
-            // Prevent selecting the same value for both questions and answers
-            // q = Hiragana - a = Hiragana, etc
-            string selectedAnswer = cmbQuestions.SelectedItem.ToString();
-
             cmbAnswers.Items.Clear();
 
             switch (selectedQuestion) {
                 case "Хирагана":
                     cmbAnswers.Items.Add("Ромадзи");
                     cmbAnswers.Items.Add("Катакана");
-                    if (selectedAnswer == selectedQuestion) {
+                    if (selectedQuestion == cmbAnswers.Texts) {
                         cmbAnswers.SelectedIndex = 0;
                     }
                     break;
                 case "Катакана":
                     cmbAnswers.Items.Add("Ромадзи");
                     cmbAnswers.Items.Add("Хирагана");
-                    if (selectedAnswer == selectedQuestion) {
+                    if (selectedQuestion == cmbAnswers.Texts) {
                         cmbAnswers.SelectedIndex = 0;
                     }
                     break;
                 case "Ромадзи":
                     cmbAnswers.Items.Add("Хирагана");
                     cmbAnswers.Items.Add("Катакана");
-                    if (selectedAnswer == selectedQuestion) {
+                    if (selectedQuestion == cmbAnswers.Texts) {
                         cmbAnswers.SelectedIndex = 0;
                     }
                     break;
@@ -201,6 +220,9 @@ namespace HiraKata_Kaizen {
             else if (openNext == "drag") {
                 SaveSettings(Properties.Settings.Default.choicesDrag);
             }
+        }
+
+        void Choice_Shown(object sender, EventArgs e) {
         }
     }
 }
