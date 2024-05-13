@@ -48,34 +48,12 @@ namespace HiraKata_Kaizen.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Specialized.StringCollection choicesMatch {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["choicesMatch"]));
-            }
-            set {
-                this["choicesMatch"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::System.Collections.Specialized.StringCollection choicesCards {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["choicesCards"]));
             }
             set {
                 this["choicesCards"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Specialized.StringCollection choicesDrag {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["choicesDrag"]));
-            }
-            set {
-                this["choicesDrag"] = value;
             }
         }
         

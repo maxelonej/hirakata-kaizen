@@ -56,15 +56,7 @@ namespace HiraKata_Kaizen {
                 lblTitle.Text = "Настройка для карт";
                 LoadSettings(Properties.Settings.Default.choicesCards);
             }
-            else if (openNext == "match") {
-                lblTitle.Text = "Настройка для соответствий (match)";
-                LoadSettings(Properties.Settings.Default.choicesMatch);
-            }
-            else if (openNext == "drag") {
-                lblTitle.Text = "Настройка для перетаскиваний (drag'n'drop)";
-                LoadSettings(Properties.Settings.Default.choicesDrag);
-            }
-
+           
             lblTitle.Location = new Point((ClientSize.Width - lblTitle.Width) / 2, 18);
         }
 
@@ -111,12 +103,6 @@ namespace HiraKata_Kaizen {
             else if (openNext == "cards") {
                 Properties.Settings.Default.choicesCards = choices;
             }
-            else if (openNext == "match") {
-                Properties.Settings.Default.choicesMatch = choices;
-            }
-            else if (openNext == "drag") {
-                Properties.Settings.Default.choicesDrag = choices;
-            }
             Properties.Settings.Default.Save();
         }
 
@@ -144,12 +130,6 @@ namespace HiraKata_Kaizen {
                 dashboard.content.Tag = cards;
                 cards.Show();
             }
-            else if (openNext == "match") {
-                SaveSettings(Properties.Settings.Default.choicesMatch);
-            }
-            else if (openNext == "drag") {
-                SaveSettings(Properties.Settings.Default.choicesDrag);
-            }
         }
 
         // Back
@@ -159,12 +139,6 @@ namespace HiraKata_Kaizen {
             }
             else if (openNext == "cards") {
                 SaveSettings(Properties.Settings.Default.choicesCards);
-            }
-            else if (openNext == "match") {
-                SaveSettings(Properties.Settings.Default.choicesMatch);
-            }
-            else if (openNext == "drag") {
-                SaveSettings(Properties.Settings.Default.choicesDrag);
             }
 
             var dashboard = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();

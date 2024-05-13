@@ -40,6 +40,7 @@ namespace HiraKata_Kaizen {
         void Cards_Load(object sender, EventArgs e) {
             timer.Start();
             LoadNextQuestion();
+            inputAnswer.Focus();
         }
         void LoadNextQuestion() {
             totalTimer.Start();

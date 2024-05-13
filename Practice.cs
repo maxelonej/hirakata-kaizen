@@ -27,13 +27,5 @@ namespace HiraKata_Kaizen {
         void btnCards_Click(object sender, EventArgs e) {
             openChoice("cards");
         }
-
-        void btnMatch_Click(object sender, EventArgs e) {
-            openChoice("match");
-        }
-
-        void btnDrag_Click(object sender, EventArgs e) {
-            openChoice("drag");
-        }
     }
 }
