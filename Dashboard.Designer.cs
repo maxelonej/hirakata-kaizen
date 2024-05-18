@@ -126,9 +126,9 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(64, 10);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(159, 23);
+            this.lblTitle.Size = new System.Drawing.Size(90, 23);
             this.lblTitle.TabIndex = 9;
-            this.lblTitle.Text = "HiraKata Kaizen";
+            this.lblTitle.Text = "HiraKata";
             // 
             // sidebar
             // 
@@ -382,7 +382,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HiraKata Kaizen";
+            this.Text = "HiraKata";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
