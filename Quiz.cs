@@ -12,7 +12,7 @@ namespace HiraKata_Kaizen {
         byte _wrongAnswers;
         byte _currentQuestionNumber = 1;
         byte totalScore;
-        byte elapsedSeconds;
+        ushort elapsedSeconds;
         byte unanswered;
 
         string _questionType;
@@ -90,7 +90,7 @@ namespace HiraKata_Kaizen {
                     lblTotalTime.Text = "" + elapsedSeconds + " секунд";
                 }
 
-                totalScore = ((byte)(Byte.Parse(lblCorrectAnswers.Text) / Double.Parse(lblTotalAnswered.Text) * 100));
+                totalScore = ((byte)(Byte.Parse(lblCorrectAnswers.Text) / (Double.Parse(lblTotalAnswered.Text) + Byte.Parse(lblResultUnanswered.Text)) * 100));
                 lblTotalScore.Text = totalScore + "%";
             }
             _currentQuestionNumber++;
