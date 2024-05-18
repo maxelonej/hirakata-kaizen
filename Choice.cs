@@ -88,7 +88,7 @@ namespace HiraKata_Kaizen {
             }
         }
 
-        void SaveSettings(StringCollection choices) {
+    void SaveSettings(StringCollection choices) {
             choices.Clear();
             choices.Add(cmbTime.SelectedItem?.ToString());
             choices.Add(cmbNumber.SelectedItem?.ToString());
@@ -187,12 +187,6 @@ namespace HiraKata_Kaizen {
             }
             else if (openNext == "cards") {
                 SaveSettings(Properties.Settings.Default.choicesCards);
-            }
-            else if (openNext == "match") {
-                SaveSettings(Properties.Settings.Default.choicesMatch);
-            }
-            else if (openNext == "drag") {
-                SaveSettings(Properties.Settings.Default.choicesDrag);
             }
         }
 
