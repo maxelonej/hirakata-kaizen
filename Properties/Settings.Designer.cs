@@ -34,5 +34,101 @@ namespace HiraKata_Kaizen.Properties {
                 this["lastOpenedFilter"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public byte QuizNumber {
+            get {
+                return ((byte)(this["QuizNumber"]));
+            }
+            set {
+                this["QuizNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public byte QuizTime {
+            get {
+                return ((byte)(this["QuizTime"]));
+            }
+            set {
+                this["QuizTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string QuizQuestion {
+            get {
+                return ((string)(this["QuizQuestion"]));
+            }
+            set {
+                this["QuizQuestion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string QuizAnswer {
+            get {
+                return ((string)(this["QuizAnswer"]));
+            }
+            set {
+                this["QuizAnswer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public byte CardsNumber {
+            get {
+                return ((byte)(this["CardsNumber"]));
+            }
+            set {
+                this["CardsNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public byte CardsTime {
+            get {
+                return ((byte)(this["CardsTime"]));
+            }
+            set {
+                this["CardsTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CardsQuestion {
+            get {
+                return ((string)(this["CardsQuestion"]));
+            }
+            set {
+                this["CardsQuestion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CardsAnswer {
+            get {
+                return ((string)(this["CardsAnswer"]));
+            }
+            set {
+                this["CardsAnswer"] = value;
+            }
+        }
     }
 }

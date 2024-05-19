@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Specialized;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,11 +10,6 @@ namespace HiraKata_Kaizen {
 
         public Choice() {
             InitializeComponent();
-        }
-
-        void Choice_Load(object sender, EventArgs e) {
-            ControlBox = false;
-
             // Packs
             string[] packs = { "Текущий", "Собственный" };
             cmbPack.Items.AddRange(packs);
@@ -25,23 +19,59 @@ namespace HiraKata_Kaizen {
             for (byte i = 45; i >= 5; i -= 5) {
                 cmbTime.Items.Add(i.ToString());
             }
-            cmbTime.Texts = cmbTime.Items[0].ToString();
+            cmbTime.SelectedIndex = 0;
 
             // Number
             for (byte i = 46; i >= 2; i -= 2) {
                 cmbNumber.Items.Add(i.ToString());
             }
-            cmbNumber.Texts = cmbNumber.Items[0].ToString();
+            cmbNumber.SelectedIndex = 0;
 
             // Questions
             string[] questions = { "Хирагана", "Катакана", "Ромадзи" };
             cmbQuestions.Items.AddRange(questions);
-            cmbQuestions.Texts = cmbQuestions.Items[0].ToString();
+            cmbQuestions.SelectedIndex = 0;
 
             // Answers
             string[] answers = { "Ромадзи", "Катакана" };
             cmbAnswers.Items.AddRange(answers);
             cmbAnswers.SelectedIndex = 0; 
+        }
+
+        void SaveSettings() {
+            if (openNext == "quiz") {
+                Properties.Settings.Default.QuizTime = byte.Parse(cmbTime.SelectedItem.ToString());
+                Properties.Settings.Default.QuizNumber = byte.Parse(cmbNumber.SelectedItem.ToString());
+                Properties.Settings.Default.QuizQuestion = cmbQuestions.SelectedItem.ToString();
+                Properties.Settings.Default.QuizAnswer = cmbAnswers.SelectedItem.ToString();
+            }
+            else if (openNext == "cards") {
+                Properties.Settings.Default.CardsTime = byte.Parse(cmbTime.SelectedItem.ToString());
+                Properties.Settings.Default.CardsNumber = byte.Parse(cmbNumber.SelectedItem.ToString());
+                Properties.Settings.Default.CardsQuestion = cmbQuestions.SelectedItem.ToString();
+                Properties.Settings.Default.CardsAnswer = cmbAnswers.SelectedItem.ToString();
+            }
+            Properties.Settings.Default.Save();
+        }
+
+        void LoadSettings() {
+            if (openNext == "quiz") {
+                cmbTime.SelectedItem = Properties.Settings.Default.QuizTime.ToString();
+                cmbNumber.SelectedItem = Properties.Settings.Default.QuizNumber.ToString();
+                cmbQuestions.SelectedItem = Properties.Settings.Default.QuizQuestion;
+                cmbAnswers.SelectedItem = Properties.Settings.Default.QuizAnswer;
+            }
+            else if (openNext == "cards") {
+                cmbTime.SelectedItem = Properties.Settings.Default.CardsTime.ToString();
+                cmbNumber.SelectedItem = Properties.Settings.Default.CardsNumber.ToString();
+                cmbQuestions.SelectedItem = Properties.Settings.Default.CardsQuestion;
+                cmbAnswers.SelectedItem = Properties.Settings.Default.CardsAnswer;
+            }
+        }
+
+        void Choice_Load(object sender, EventArgs e) {
+            ControlBox = false;
+            LoadSettings();
 
             if (openNext == "quiz") {
                 lblTitle.Text = "Настройка для викторины";
@@ -55,6 +85,7 @@ namespace HiraKata_Kaizen {
         
         // Next
         void btnStart_Click(object sender, EventArgs e) {
+            SaveSettings();
             if (openNext == "quiz") {
                 if (dashboard.content.Controls.Count > 0) dashboard.content.Controls.RemoveAt(0);
                 Quiz quiz = new Quiz(cmbTime.Texts, cmbNumber.Texts, cmbQuestions.Texts, cmbAnswers.Texts);
@@ -77,6 +108,7 @@ namespace HiraKata_Kaizen {
 
         // Back
         void btnPractice_Click(object sender, EventArgs e) {
+            SaveSettings();
             var dashboard = Application.OpenForms.OfType<Dashboard>().FirstOrDefault();
             if (dashboard.content.Controls.Count > 0) dashboard.content.Controls.RemoveAt(0);
             Practice practice = new Practice();

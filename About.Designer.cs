@@ -52,22 +52,22 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label4.Location = new System.Drawing.Point(34, 57);
+            this.label4.Location = new System.Drawing.Point(47, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(417, 25);
+            this.label4.Size = new System.Drawing.Size(296, 25);
             this.label4.TabIndex = 2;
-            this.label4.Text = "для изучения и практики хираганы и катаканы";
+            this.label4.Text = "и практики хираганы и катаканы";
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label5.Location = new System.Drawing.Point(34, 29);
+            this.label5.Location = new System.Drawing.Point(47, 29);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(465, 25);
+            this.label5.Size = new System.Drawing.Size(438, 25);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Hiragana Katakana Kaizen - десктопное приложение";
+            this.label5.Text = "HiraKata - десктопное приложение для изучения";
             // 
             // customPanel1
             // 
