@@ -33,6 +33,7 @@ namespace HiraKata_Kaizen {
             cmbQuestions.SelectedIndex = 0;
 
             // Answers
+            cmbAnswers.Items.Clear(); // очистить все итемы
             string[] answers = { "Ромадзи", "Катакана" };
             cmbAnswers.Items.AddRange(answers);
             cmbAnswers.SelectedIndex = 0; 
@@ -124,7 +125,6 @@ namespace HiraKata_Kaizen {
 
             switch (selectedQuestion) {
                 case "Хирагана":
-                    cmbAnswers.Items.Clear(); // очистить все итемы
                     // добавить новые
                     cmbAnswers.Items.Add("Ромадзи");
                     cmbAnswers.Items.Add("Катакана");
