@@ -1,4 +1,4 @@
-# HiraKata Kaizen
+# HiraKata
 
 ## Description
 
