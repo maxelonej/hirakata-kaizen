@@ -2,7 +2,7 @@
 
 ## Description
 
-Desktop application that provides a learning experience for Hiragana and Katakana
+A desktop application that provides a quiz and flashcards practice experience for Hiragana and Katakana.
 
 ## Screenshots
 
