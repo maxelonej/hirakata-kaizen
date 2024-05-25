@@ -1,33 +1,36 @@
 # HiraKata
 
-## Description
+![English](./en-readme.md)
 
-A desktop application that provides a quiz and flashcards practice experience for Hiragana and Katakana.
+## Описание
+
+Приложение, которое предоставляет возможность проводить викторины и практиковаться в использовании карточек для изучения хираганы и катаканы.
 
 ## Screenshots
 
-![Splash screen](./imgs/readme/splash_screen.png)
+![Заставка](./imgs/readme/splash_screen.png)
 
-![Alphabets](./imgs/readme/alphabets.png)
+![Алфавиты](./imgs/readme/alphabets.png)
 
-![Choice](./imgs/readme/choice.png)
+![Выбор](./imgs/readme/choice.png)
 
-![Quiz](./imgs/readme/quiz.png)
+![Викторина](./imgs/readme/quiz.png)
 
-![Quiz results](./imgs/readme/quiz_results.png)
+![Результаты викторины](./imgs/readme/quiz_results.png)
 
-![About](./imgs/readme/about.png)
+![О проекте](./imgs/readme/about.png)
 
-## Built With
+## Построен с помощью
 
-List of the main tools and frameworks used in the project.
+Список основных инструментов и фреймворков, используемых в проекте.
 
-| Tool/Framework | Version                  |
-| -------------- | ------------------------ |
-| Visual Studio  | 2022 17.9.1              |
-| C#             | .NET Framework 4.8.04084 |
+| Инструмент/Фреймворк  | Версия      |
+| --------------------- | ----------- |
+| Visual Studio         | 2022 17.9.1 |
+| .NET Framework        | 4.8.04084   |
+| Язык программирования | C#          |
 
-NuGet Packages: None.
+Пакеты NuGet: Отсутствуют.
 
 <!-- ## Getting Started
 
@@ -41,10 +44,10 @@ Instructions on how to use the project.
 
 Guidelines for contributing to the project. -->
 
-## License
+## Лицензия
 
 [GitHub license](./LICENSE.txt)
 
-## Contact
+## Контакты
 
 [tg](https://t.me/maxelonej)
