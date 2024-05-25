@@ -30,6 +30,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.customPanel2.SuspendLayout();
             this.customPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -39,12 +40,13 @@
             this.customPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
             this.customPanel2.BorderRadius = ((byte)(30));
+            this.customPanel2.Controls.Add(this.label7);
             this.customPanel2.Controls.Add(this.label4);
             this.customPanel2.Controls.Add(this.label5);
             this.customPanel2.ForeColor = System.Drawing.Color.Snow;
-            this.customPanel2.Location = new System.Drawing.Point(241, 179);
+            this.customPanel2.Location = new System.Drawing.Point(241, 163);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(532, 111);
+            this.customPanel2.Size = new System.Drawing.Size(532, 142);
             this.customPanel2.TabIndex = 3;
             // 
             // label4
@@ -52,22 +54,22 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label4.Location = new System.Drawing.Point(47, 57);
+            this.label4.Location = new System.Drawing.Point(39, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(296, 25);
+            this.label4.Size = new System.Drawing.Size(424, 25);
             this.label4.TabIndex = 2;
-            this.label4.Text = "и практики хираганы и катаканы";
+            this.label4.Text = "викторины и практиковаться в использовании ";
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label5.Location = new System.Drawing.Point(47, 29);
+            this.label5.Location = new System.Drawing.Point(39, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(438, 25);
+            this.label5.Size = new System.Drawing.Size(454, 25);
             this.label5.TabIndex = 0;
-            this.label5.Text = "HiraKata - десктопное приложение для изучения";
+            this.label5.Text = "HiraKata - предоставляет возможность проводить ";
             // 
             // customPanel1
             // 
@@ -117,6 +119,17 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "хираганы и катаканы";
             // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label7.Location = new System.Drawing.Point(39, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(404, 25);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "карточек для изучения хираганы и катаканы.";
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -149,5 +162,6 @@
         private CustomPanel customPanel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
     }
 }
