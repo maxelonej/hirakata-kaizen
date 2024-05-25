@@ -24,13 +24,13 @@
         /// </summary>
         private void InitializeComponent() {
             this.customPanel2 = new HiraKata_Kaizen.CustomPanel();
+            this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.customPanel1 = new HiraKata_Kaizen.CustomPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.customPanel2.SuspendLayout();
             this.customPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -44,10 +44,21 @@
             this.customPanel2.Controls.Add(this.label4);
             this.customPanel2.Controls.Add(this.label5);
             this.customPanel2.ForeColor = System.Drawing.Color.Snow;
-            this.customPanel2.Location = new System.Drawing.Point(241, 163);
+            this.customPanel2.Location = new System.Drawing.Point(242, 164);
             this.customPanel2.Name = "customPanel2";
             this.customPanel2.Size = new System.Drawing.Size(532, 142);
             this.customPanel2.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label7.Location = new System.Drawing.Point(39, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(400, 25);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "карточек для изучения хираганы и катаканы";
             // 
             // label4
             // 
@@ -65,7 +76,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label5.Location = new System.Drawing.Point(39, 31);
+            this.label5.Location = new System.Drawing.Point(39, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(454, 25);
             this.label5.TabIndex = 0;
@@ -80,7 +91,7 @@
             this.customPanel1.Controls.Add(this.label1);
             this.customPanel1.Controls.Add(this.label2);
             this.customPanel1.ForeColor = System.Drawing.Color.Snow;
-            this.customPanel1.Location = new System.Drawing.Point(485, 327);
+            this.customPanel1.Location = new System.Drawing.Point(486, 328);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(518, 130);
             this.customPanel1.TabIndex = 0;
@@ -118,17 +129,6 @@
             this.label2.Size = new System.Drawing.Size(195, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "хираганы и катаканы";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label7.Location = new System.Drawing.Point(39, 87);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(404, 25);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "карточек для изучения хираганы и катаканы.";
             // 
             // About
             // 
