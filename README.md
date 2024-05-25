@@ -1,6 +1,6 @@
 # HiraKata
 
-![English](./en-readme.md)
+[English](./en-readme.md)
 
 ## Описание
 
