@@ -1,5 +1,7 @@
 # HiraKata
 
+[Русский](./README.md)
+
 ## Description
 
 A desktop application that provides a quiz and flashcards practice experience for Hiragana and Katakana.
